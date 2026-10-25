@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:0ea53f37ce78631f6c9f9416138f995d47e0ed6c0f32fadf6302a053697cf250",
+  "claims": [
+    {
+      "id": "claim_7da573d3acfd4e42a24d96f63c118dc3",
+      "statement": "Monorepo development uses uv for interpreters/environments and per-package Makefiles as the source of truth for commands; uv provisions the correct Python interpreter automatically so there is no global Python version to pin.",
+      "evidence": [
+        {
+          "resource": "repo://libs/DEVELOPMENT.md#L60-L67",
+          "version": "repo-lines-v1:sha256:9a94421158ecf7af09110ccb27e5548f69c08e3a82edbe49bec6d57f5ad0f73c:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzU3OGZkNzcyM2NiNjk4NmU5YTVmYmM3YzU0Y2I3OGQ5ZTNkNGJlNDliYzQ5OWMxNGI4NTNjYjBmMmQyNmU0NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzVhOTQyMjY4NDBkM2I1NDczOGVjMmI2MDQzNGJhOGU2NjRiZTc3MzgyZjNiMjQzMzliMTA0MGM0MTk5MjA1YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTczZmYyNTcxMWQ3ZDgxYTgzNzdlODRmOWE4OGZjMjYwMjU4YjcxNWE4YzkyOTY3ODIxZTk4ZjQ1NzRlNjRmOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjQ4NDY1NTBmM2Y5YzAxMmVhZjE1OGI4NjgyN2IxNzgwNjZmNDcxZDBmOGM5MTViZWViNjZlNTNmOTJiYzgzOSJ9"
+        },
+        {
+          "resource": "repo://libs/DEVELOPMENT.md#L8-L28",
+          "version": "repo-lines-v1:sha256:4bee37fc27ef15395128d8fb4726584507d44cfe6157398a93ff97fe5011a589:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkOGZlZmRmNDI5ZDA4OTc5MzRmMzA2ZTJiYWIzOWQxYjZiZTI3Y2FhMzZmODM0YWIzYWFkNmMzZWNlOTk3NjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3MjQ4MjkwZmVkNTVmYzU0NmM0NmNmNjc5NzhmOGZmOWI2N2M1MjllMDY0YjZjNTdiM2M0YWFhYzJjZDk0YTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjMjU1MDZkMzk3YzA1MzEzYjE1ZDQyMmNjYzM3NzFlYTYwZjg5NmE1Y2M2ZjRjZWNlNTA2ZDBjZWNmZTg5NDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhjNjI5YjAzMjEzZDZjNTY0YzBhNmI5OWE1MzVlNWU5MjNhM2MyYWM3NWFlOTgzYzY5N2UwZjJhMDlmNWE5ODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3c78b0522be0486984970312712e0997",
+      "statement": "The monorepo separates the core `deepagents` SDK, terminal `deepagents-code`/dcode product, ACP integration, evaluation suite, experimental Talon host, and provider integrations into independently versioned packages under `libs/`.",
+      "evidence": [
+        {
+          "resource": "repo://libs/README.md#L6-L30",
+          "version": "repo-lines-v1:sha256:a3604bb00a7fd4b6a7248fa8fd0614db0b898bafea5adffe54e9640301618d7f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzMzgyNDRmZTdlNDQ0ZTYyNDE0ZTFhYjI1Y2NlMzc0YmU3NGE5ZTQ2ODZhN2NjZGI0ZDU5YThkZjVmYjNiMTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxZmUzM2MwMzdmNGUyNmU2YjllZWNiNWMyMDgxMWQ4N2IxNmEyZjI4NWI1ZDBkMDdhNTIxZTdhOTljNmVkZmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjZDIyMzM3OTI2ZWEwOThlODhmMWYyYjczY2U0ZjUzMTU1MzQyOWI0NDBkMDc1NDVjYWI1Yzk2NGIyMzgxMjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1OWRiNTc1M2M3YmZmNDY2NjNjYTBlMzc5ODZjNWYxY2UxYWZkMzNhYjk4MDg0YTM2M2M2ZjBiM2JjNWQ5NzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_caf8c42c3d904ac0bcefb0a19d532137",
+      "statement": "Repository tests should be network-free and deterministic under `tests/unit_tests/`, with `tests/integration_tests/` reserved for networked integration contracts; unaccepted pytest warnings fail the suite.",
+      "evidence": [
+        {
+          "resource": "repo://AGENTS.md#L77-L95",
+          "version": "repo-lines-v1:sha256:b63372845dddf71fc708720e93a2605f9091d82b8e0c04ccd692bb8b789fd51b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0NmI4NzJmN2YwNGIyNTNhMTkxZWIxZGExNWE2MDI0ZjdjZjE5NTNmZDNhYjM4MWU1MjkwYmU0YTYyNDAxNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3Yzk1ZGExNmJkMzBjMTJlZTcwNzBkZGI1YTBjMjg4YTQwMzMyMDM0NTExZDE3OTBiM2NmMWIwZTE3YWMwMWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhOTA4ZDNmNzM2NGVkZmYyOWY5NDI5ZWVkMzIxNDRiNTUzZGQxYTc0M2YzMjFjMWM3NGY2NzZmMjEzYjY3ZTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzMzRmZjEzNjg4MzgzMTMzODRlZmUzZDZmM2RkOTE5NWRjMTg2NzFjMjlkNmQzZmZlNjllMTEzNTVkMmIxOWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bcc2935c6b814ff297ac64b3b5e97c0e",
+      "statement": "The ACP and Talon standard `make test` targets disable network sockets; Talon's target first runs WhatsApp bridge Node tests.",
+      "evidence": [
+        {
+          "resource": "repo://libs/acp/Makefile#L10-L16",
+          "version": "repo-lines-v1:sha256:f8f53bcac379c043faf8140bcd7f84871919720741f92bd235734a1c31786632:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmJlMDg2YmM3MTZlNDVmNWM3Y2QyMzAxMWRlODI2ODI1ZTZmMzk2Yjk0MGU5MzI0N2MzNjFmMmY5ZDlhY2M4ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzYzOWQ4NjYxOGNlMGIyYzZjZjJiMDg2OWEyYjZiZDAwOTBjMWU0ZGI1MDk2OTZjZGY3NzU1ZWYzYTBiMmFiMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDMxZmVlMDgyMjk5OThjZmJiM2RjY2EwMDZmM2U5MzM4YTk1YTFlY2ExYWMzNmRkYzM0ZGYzN2E4ZjYyNDEyNCJ9"
+        },
+        {
+          "resource": "repo://libs/talon/Makefile#L8-L18",
+          "version": "repo-lines-v1:sha256:0952ce0f926e46b95cf4e1d3875222090398f364f47d7ba2ffac617907e1c0d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiZTA4NmJjNzE2ZTQ1ZjVjN2NkMjMwMTFkZTgyNjgyNWU2ZjM5NmI5NDBlOTMyNDdjMzYxZjJmOWQ5YWNjOGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlNjI5YWM1NjQ1YjZiMmYwZDEyNjYwYzhiNTA0MjgxZGMzYjg2M2I5YjYyNTRiYTY2YjdmZmQ5MTg2MWRkNzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0NjNkZTM4NmUwNzkxYWRkNTJlM2Y2ZTNhMDlmMmJmNjQ4ZmU0MzEzMThlMTkxNWI3ZTVkZTk5ZjdhNTg0NTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiZGQ2ODEwMjRlZDhkZjcyOTU4N2JkZDdiMTZmYzI3YWVjMDk2NGJlZTE0Nzc3NDg3ZTg2NGQ0ZTg3ZjkwOWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8615db2846f74f829df36fc1c7a0da0c",
+      "statement": "Package manifests establish the local development dependency direction: ACP consumes the SDK; dcode consumes the SDK, ACP, and partner integrations; Talon consumes the SDK and dcode through editable sibling sources.",
+      "evidence": [
+        {
+          "resource": "repo://libs/acp/pyproject.toml",
+          "version": "repo-file-v1:sha256:f0c5215618b921ef1a72d9bacf95ad9b56634a5259b39bb8908ba33551432569"
+        },
+        {
+          "resource": "repo://libs/code/pyproject.toml",
+          "version": "repo-file-v1:sha256:0914b62b0001bee2dd070011f2fe40759bcf3cbe2f97a7ab715a4602044790fd"
+        },
+        {
+          "resource": "repo://libs/talon/pyproject.toml",
+          "version": "repo-file-v1:sha256:555e93f332f5197cbed538d2ab1e0fb3f900102666bab5332b11a24443ac641b"
+        }
+      ]
+    },
+    {
+      "id": "claim_ec58de75484c4ea292134624f08a4d95",
+      "statement": "Each package has its own `pyproject.toml`, `Makefile`, and README, and its local source and tests are the authoritative place to determine how to change and validate that package.",
+      "evidence": [
+        {
+          "resource": "repo://AGENTS.md#L102-L127",
+          "version": "repo-lines-v1:sha256:701d1a1efce47ba61cb10309e79015861e16a1a7c4210ee189bee74de189e795:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5MzdlY2E2NjI4ZmZmNzVhY2Y0NzUwYzRjN2ExZDZlNjAxNTBhNzExNTA1ZTAwZmIxZTAxNjQ3ZGMyYjdhNzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5OGExMjc3YWQ3MjAzN2NhMWRkNmQ0Zjk0N2Q1ZGUwZDcxMGE2MGIxZDdjYTJlNmU5ZTI0NTcyMTc1NmQwOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0YmFjMDc4MmM4YzQyY2QyODIzODIyNjkxZDcxMDNiMWNiZTczNDg5MThhOThhNzY5NjA3MjlkODhjMzY4OWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5M2VjMmVjMzE4YmEwMzE2MTlkYzhhNTRiYmExYWU1ZjhjZTM5MmE4ODViMWJmYzkwNTI2N2MzNjZjMjg0OGYifQ"
+        },
+        {
+          "resource": "repo://libs/DEVELOPMENT.md#L30-L49",
+          "version": "repo-lines-v1:sha256:7fadcab0884d15474b9ffc94632e833e341967e49cdc798b113d09d8d854a6f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1YTU3M2ViOTJkN2U2ZDc2NmIwOGNmNTU4ZjUzZjhjM2M5MDNiMTdhMzM0ZmRiMDBhNThjYjVlNmEzY2NhYWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2OTU5OTNiM2Q5NDNkMDZiMmRlN2I4OTViMDE1MmY3YzNmZmQ2YmI2YjcxZGI4ZDgyNGI0NjNmZjA4OTA1ZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNzM1YTE1OWU0MTI5M2Q4NWMwMWQ0MWE3NzAzOTk3ZGI0YjE3MGM0MTM3YzU2NGQzNDBmMGFlNWEzYzY0OTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU2ODE3MzI2NGExYjg2YzJlMWVmY2ZiMTZhNTk2OTRiNGI4OWUxNWJhOGJkODhmOTI0NmMzZTU1ZTdmNTM5ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_167f74de5e4f4d29b9935c91d9ee8702",
+      "statement": "The package Makefiles provide the focused validation boundary: SDK and dcode tests accept `TEST_FILE`, dcode's `make check` adds local CI-parity gates, and `libs/` provides fan-out `make lock-check`.",
+      "evidence": [
+        {
+          "resource": "repo://libs/Makefile#L47-L53",
+          "version": "repo-lines-v1:sha256:4cb508beca89de82f3462be7ed2d34502b5a772d1aa62d9656577e8d6335ccd4:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzc1ZjljNGNhZWI1OTI1YTIwYjZhNDA4ODg5ODk0ZGU0ZmM0NmYwNzA4YTI5NzRkMmM1YjkwYjQzMzVjNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGZlMDQzM2Q3ODBiODA3Njg5OGJiM2Q2OTU3Y2U4MDhkNjU4MDZiYTM2Y2Q3MjNhOThlODBjZjAwY2EyZDdmMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTc0MWVmZjdlYjc0ZjFmMzNjNWEzODE1Yjc5ZDlmYzE3ZDI2NTUwNTA2ZGM1NTI0ZjViY2JkYTAwZWYwNjMyMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDliZjgyODAwYzE5NWFlMTBkYzlkMGViZDc4ZGE5MzRkMzI4YWZlZmRjYzgzODZlZGFjYjEwOTY1MmE2OWQwZiJ9"
+        },
+        {
+          "resource": "repo://libs/code/Makefile#L101-L117",
+          "version": "repo-lines-v1:sha256:499ebe225b6add262189cac139ed7dacd2dcdecb43ea024db80311e80c222c24:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmNWMyMmNiNmExYjVjZTU2YWE0ZmY5NWRmZjI4YTIyYzExY2VmYTA0OTUwMTcwODFlYzcyYjgwYjYwMDEyMTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmODBmMjk5MmQ2OTYyYzE2Mzg1NzQ0ZDdmNzc5ODc0YjFmMzk1MDJiOTU1MTVhYWY2MWQzYmY4MWI5ZmJhYzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczZWYyMjRjNTI2OTIzOGY4NzA0NTYyMjZkM2JmMjVjZWZiYjcyZTFlN2I3OTBlOTkzMzM5ZmUxZTcwOTUzNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhYWI5YzQ3MzQ2NGI2ZGQ3YThmMzBlMTNlYzYzMzlkNzk5MWFmNDNkNjc5NTZlM2NiYmQ4NTE4NjA5ZjJhZWEifQ"
+        },
+        {
+          "resource": "repo://libs/code/Makefile#L14-L28",
+          "version": "repo-lines-v1:sha256:037c95ac5b5ad1444a320c1204311380507059ee1b63cc83995602bcad2a3b29:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5ZjNhNzI0MWE2NmI3NjAwYjM2MzViZmQ3NzE4MGU4NDY2YTZkMzYxZDRjOGY1ZTg4ZmEzMWFlNTgyMTZkN2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyOGU3YzAyNGQ4MTg2NDQxN2NjY2I0NjU4MmVkOWJhNzM5YWM2OWZkZjA2YTgwMDE1NWNjM2ZlZjkzNDQyNjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0ZWJhYzU1OWIxOGIxZWE4ZTkxZWUzMGM3YmE0ZWMxMGY4YTU5OGQ5NDNkYThmZDI1NDRkMzJlNGZlZWYwMDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4YjgwODdhODcyMDYwN2RhOTNhZDY4NWE4NDU3OTQ1M2JhOWQ2ZGU3M2I5ZTk0NTkxNGMyZjhmYzJhYjI0YWEifQ"
+        },
+        {
+          "resource": "repo://libs/deepagents/Makefile#L13-L23",
+          "version": "repo-lines-v1:sha256:31d76ce316e8abad9aa8734ac252f87775a8108b6d7df25f792b57852bfe3ab1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5MjUxMjg5NzRmZWQwNDg1MGJmOTM4MjBiMDQwZDI4ZDdkZDRiMGMwODJkZTMyYjk1YjYzYjkzN2I1ZTk5MjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyOGU3YzAyNGQ4MTg2NDQxN2NjY2I0NjU4MmVkOWJhNzM5YWM2OWZkZjA2YTgwMDE1NWNjM2ZlZjkzNDQyNjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2MzlkODY2MThjZTBiMmM2Y2YyYjA4NjlhMmI2YmQwMDkwYzFlNGRiNTA5Njk2Y2RmNzc1NWVmM2EwYjJhYjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU0M2E3OGIwMjQyZGQ5Njk2ODg1NmNlODU5ZjM0MTcwYWZkYTI3MjVlNWYyYjllYWJkNGE0MzE3ODI1YjEyYTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a3c9f4a75e004851bf8503589f7f175f",
+      "statement": "dcode's `make check` runs lint, import checks, unit tests, extras/version/lockfile checks, and reports a stale workspace SDK pin without making that local check fail.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/Makefile#L106-L117",
+          "version": "repo-lines-v1:sha256:6e94ed92582b4ef86a8789300243d2f94e9b701786809e54451da6f65130bc57:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1MDMzYmM3YzZkNmI3ZWJiYzU1ZmY5OWJiMzNjMWMzNDM4MTA2NWQ0YzMyZTE2OWM1N2Y1MjdhZjVlODkzMmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmODBmMjk5MmQ2OTYyYzE2Mzg1NzQ0ZDdmNzc5ODc0YjFmMzk1MDJiOTU1MTVhYWY2MWQzYmY4MWI5ZmJhYzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4YzY0OWE5OWFjYmFkZTA2NThiMGM1YjA3OTU4ODQ4YWRmYWMxZWEyOWQwNzg0NzIxNzNkNDY2MmM0OWRjM2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhYWI5YzQ3MzQ2NGI2ZGQ3YThmMzBlMTNlYzYzMzlkNzk5MWFmNDNkNjc5NTZlM2NiYmQ4NTE4NjA5ZjJhZWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3a744a24778948c4a84e1920995c6462",
+      "statement": "`deepagents-code` requires `deepagents==0.7.32` exactly; its package guidance requires raising that pin in the same pull request that first depends on new SDK functionality.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/AGENTS.md#L109-L113",
+          "version": "repo-lines-v1:sha256:5e3a3facaf796da882cea5f44a3afc2aebc95e46e8bd944b2d04b2f221c1594b:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWFjNzcyOWIzZmVkYWJiMmNhODY5YjQ3NmE5OWU4NjI0NzAzNDlkOTU0YmZhNGY5M2VhMmRiZWM5NGQ1ZGY0OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjgzZTczODIyZTAyNWIyYzBmYzY0NzI3MjQ3ZTc4NTZkMjc1MzQ1OGUzODJmNWJlZTY0YTc3MWQ2YzRlNGZlMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDVmYzczNjhjNGQ4NGVlYzEyYzI5ZDA3NTYwNWZmYTUwY2ZmNzkwOWY1YzNhNDZkNzU3MWY0MTQ5ZGMwYWYxNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmI0YjVjODVlYzRiMzM1MmUyZDkzZWZkMTFiOWMyNjJhYjI1YmYwMTc3NjJjMzViYjQxOWJkZjUyZmY5NjVhYSJ9"
+        },
+        {
+          "resource": "repo://libs/code/pyproject.toml#L26-L29",
+          "version": "repo-lines-v1:sha256:be823e874cf2d1bb2f3beda0dff4a239b5e6d369616fc7f29a52e6e54a45b6fd:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWQ5NWY1ZTllZGUwMTgxNjA0M2MwNzk3YWNlOGRhMmFjNGU5OWE4YTZhNjEwZmE5ODU3MGVmMzRiOTM1NjEwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGJjYjFhY2U3YTk0Y2MyNGEzYmJkMjE0NThlZmNhNGMxMmI3ZTFhYmEzOWZhNGUxM2NhZmViZjZjMWU2YTFhMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWFmZDBkOTg5MzkxYzAwN2E3ZDdhYzQ1YjQ5YmZjZjcyMTQ5Y2U2MDcxODM5MGJjZTQxNDMwNmQ0ZDhhNDZkNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjk4MTJmOTcxN2VmMDBmNmVhNTk1ZDJmOGY2NDIwNDg1MjE3MmIwOTE1OTI3OGZkYjJiMWM0MzM1NTJiYzlmYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a84dc0804b0b4c54bf53fe5de52d3b9b",
+      "statement": "dcode resolves the SDK, ACP, and its partner packages from editable sibling sources during local development, while QuickJS resolves the SDK from an editable sibling source.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/pyproject.toml#L213-L230",
+          "version": "repo-lines-v1:sha256:9e36cc15f11fc02de438b395ee678be644fca3efad96a5fb55c459c57447f787:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2ZWYwMmIwYTRhYjY4NTNhZTZiMmEyNWIzYjM1OGZlNTgzNzk5N2IzNGVlNDFmOTIyNzY3OWFhMWM5MDFjODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NDE2ZTA5Zjc4YmEzMTZjMDMyNTY4MjEzYjg1NWVlNzU2ZTQxNTY1ZDkxOGYwOTUxOWM4MWZkNjIwZjQwNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmZWI3MWU1ODRmY2Y2MTM5ZjE1ODg2ODhjNjQxNzc3NGNmYzkxY2YzYWRjZWJkYTM2MzI2NjViMjRiODcyZTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhNjdmYzY0MWQ0NTUyNTg5N2MxNDFlMjg5YWEyYTQ5NGVmMWVhMWYzZmQ2ZDI4OTJmNzg4NzdkNDFiZTZjOWIifQ"
+        },
+        {
+          "resource": "repo://libs/partners/quickjs/pyproject.toml#L62-L69",
+          "version": "repo-lines-v1:sha256:bf6d9587134f2c2996c4adc8b69c89ef732008d09619031aaefdb1b91ceebedd:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTZlZjAyYjBhNGFiNjg1M2FlNmIyYTI1YjNiMzU4ZmU1ODM3OTk3YjM0ZWU0MWY5MjI3Njc5YWExYzkwMWM4NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjU5MTNhMGIyMTA1MTRkYWM5OTJmMTM3ZDRlYjJiMWRmNmIzMWM4MTg5YzcwMDI3NTkzNWZkYjkxZGY1YjBlNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2ZjNjk5ODcxZmJlMDliYzVhMGQxNjQ3YzhhODA5ZDA3N2E2MjEwYmI3NjgyNTA4MDE2NTI2YjJkZDUwMzdjZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGE2N2ZjNjQxZDQ1NTI1ODk3YzE0MWUyODlhYTJhNDk0ZWYxZWExZjNmZDZkMjg5MmY3ODg3N2Q0MWJlNmM5YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3511ebbf24924296bfa96cf53e2b3377",
+      "statement": "The SDK and dcode standard unit-test targets disable network sockets while permitting Unix sockets.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/Makefile#L25-L28",
+          "version": "repo-lines-v1:sha256:8048ec8e97aba4aebb8908499a7dbb74deac5071eff3d984caa542dfc4395091:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzMyMTg5ZTJkYjkzM2I2YTJhZDk2YjRkZTA4NzdkMTU1ODljNTgyYzNiNGMzYmVkY2Q0NjUwMDRjNDg4YjlkOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjI4ZTdjMDI0ZDgxODY0NDE3Y2NjYjQ2NTgyZWQ5YmE3MzlhYzY5ZmRmMDZhODAwMTU1Y2MzZmVmOTM0NDI2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODg2ZGVhZmU4NTA5NmViMTQxNTM3NjQ2NzIxMDVkMGExM2E1MDUzYmM5Y2I3MDg3Nzc2MzNkY2Q3ZjBkODQxNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzhiODA4N2E4NzIwNjA3ZGE5M2FkNjg1YTg0NTc5NDUzYmE5ZDZkZTczYjllOTQ1OTE0YzJmOGZjMmFiMjRhYSJ9"
+        },
+        {
+          "resource": "repo://libs/deepagents/Makefile#L19-L23",
+          "version": "repo-lines-v1:sha256:387ee968c3fe15b2d66c005ae96ae93f5f4f36b54ef9e97920cf2351d49dc523:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzMyMTg5ZTJkYjkzM2I2YTJhZDk2YjRkZTA4NzdkMTU1ODljNTgyYzNiNGMzYmVkY2Q0NjUwMDRjNDg4YjlkOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjI4ZTdjMDI0ZDgxODY0NDE3Y2NjYjQ2NTgyZWQ5YmE3MzlhYzY5ZmRmMDZhODAwMTU1Y2MzZmVmOTM0NDI2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTUwYTU2NGE5ZGJiMzU3MTRkZDYzMGZlYTE3NWM5ZTVkOTRjNWEyM2ZlMzc4MTIzYzVhZGNhYzI3ZWZiZjEyZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTQzYTc4YjAyNDJkZDk2OTY4ODU2Y2U4NTlmMzQxNzBhZmRhMjcyNWU1ZjJiOWVhYmQ0YTQzMTc4MjViMTJhMCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.4.2",
+    "at": "2026-10-25T08:05:05.473Z"
+  }
+}

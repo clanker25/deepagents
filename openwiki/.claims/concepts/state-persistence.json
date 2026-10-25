@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f67b8ba93ac52fd9e84665fde5ee609c0f2cd97a0ee52bb5307dceed21b6ac09",
+  "claims": [
+    {
+      "id": "claim_6aacf0b3f58b455fa74a28b37e78cae1",
+      "statement": "dcode stores local LangGraph session checkpoints in a hardened DEFAULT_STATE_DIR/sessions.db SQLite database; get_checkpointer supplies an ownership-fenced AsyncSqliteSaver, and thread discovery derives metadata from checkpoint rows with a covering index to avoid scanning checkpoint blobs.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/sessions.py#L2044-L2063",
+          "version": "repo-lines-v1:sha256:e31c4ca0ff332f18dffd8a2a3ae47a3e84e2d43e163c8a9d5d0a92c9b625286d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3Y2ZmM2YxNzg0MmRlYzZlN2U5MWMzZTNiOGZjZTBhODIyZmMzMTEyNzM4MWIwMGY0NGE5ZjEzMzMzMDNhMmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0NTQ0Yzk4NWVmOTJiZWFhNWEzNDFkMDY1ZDM3Nzg5ODFkOGQ5ZTc2MDYyNGNjMWYyNGUyY2M3YjRmZWUyZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3MzQzYWQ2ODc2YTJlMjZhM2Y4NTBmNWVkYWZlYTMyOGI3ZjNlM2JhNDQwODMwODBhYzIwMzllYzBlOTg0YzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmNjdjMjcwYmZmMTdlOGY3ZGE1MTMyMDQ5ZWI3NzcwMjNiYTI4NjgzMDY3NDVlODc5Yzc1MjFkYmNkNDNmZWEifQ"
+        },
+        {
+          "resource": "repo://libs/code/deepagents_code/sessions.py#L352-L370",
+          "version": "repo-lines-v1:sha256:c84c04d3c54ce66a00795c5460bf333001d2bd64e41555b8ab80e09b267c07d3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhMGNlZGRlYmNkMTAzNzJmYzFmZDZiNTM1MDFjNzEzNjUyYWJhMjcxNjI4OTBmMDJjNmVmOWZhZmNiMzNlMmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyZTU3NTJhMGE0MGEyYjViOGNjMGUxMmI4MTE5NDM4ZTZjN2RkODZlNzQ1NzgwYWI3NjA2NjNmZTZkMDIxMDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmYWJkNDdhNmUyMTI4MmZkY2I1OGY5OTdkMTBjYzkwMDI0MWY4NzY0NDY5MGIxMTQ4NTFhYzE1NTIzY2UyMGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0ODI4OTRmMzkxZGM1OGRlNTFiNDdhYWNmMTk5YzJkMzhmMjE3ZmFjMDFmNWQ0ZWQzMmVmN2I4YjdkZGU0ODcifQ"
+        },
+        {
+          "resource": "repo://libs/code/deepagents_code/sessions.py#L396-L456",
+          "version": "repo-lines-v1:sha256:eacd02486337fa55f0cadd1bab011c1ef375fc9831ab404f9a9e684c5ed99423:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkNzZmNjE5ZDU1YjhhN2UzZjA2Yjk5Mjc0OTZiNjg0ZjMyOWU2OGEzMDJiMjliZmZhNmZhYzA4NjU3M2RlYzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmNjJlZDM1MjY5OTA2OTE4MDFjMTMyODFhYWU4MTMwYjM0MGU0ZjhiMmY5ZTMxNTM4NjhkZDI4MTY5YzYzZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRlYmYwYzVhYTE1MTgxMzYxZWEwYTcwYTQyNDI0NzU5ZWNkMGE1ZGRkZTNmNjYyM2EwNGNiYmZhN2JiMjkxMzMifQ"
+        },
+        {
+          "resource": "repo://libs/code/deepagents_code/sessions.py#L502-L615",
+          "version": "repo-lines-v1:sha256:a591ba09dbd0ebce8ac3ab463f8cfeba24ee152be5a2478b7b2ec3c9f3421015:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzODgwZDllZmMzNmQ0YTJiNGY2YjNkMzViYjc5YTMwZjhiODMxNDIzZDRiNWY2ZDMwZWEzNGI5ZTEyNzUxZjc4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1ZDBjODQ4M2Y2NmVmOWVkYjFmMjgxMWQ5MWVhN2EyZmM3NDM3MzRlMjQ4MzIzNGQxYjFjZGYxN2EyNzA2NzgwIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlNzRjODFiYzEzNzk5M2Q0NmQ2YmNmZTNhMTI4MDIxZjdmMDMxYjQ3YzNmODEzOGFkNjg0ZmRhNTg2MDZjMTc2IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIwZTQxMmJkMWM0N2MyMjg3NWIxYjdiZWNjZmVhNWU5MGVmMGU5ODA5NTQ1NjI3MjE3OTBiYzYzY2I3YjEzMzc1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf3759cbb22d46a685be014cb63227f2",
+      "statement": "dcode reconstructs a thread's visible message count from root-namespace messages writes when DeltaChannel snapshots omit the inline value, replaying writes in checkpoint/task/index order and including pending writes applied by a head-state read.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/sessions.py#L1007-L1011",
+          "version": "repo-lines-v1:sha256:142763c198d009e84aa46e3110d237e561379de168c5003baa5c96e3b99492c0:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzliMzFmNTFmY2VhNzNkYTJmYjQwMGJlODcwYmUzZmZjZGFmNjkxYTBmMTQ1ZTIzY2E0NmFkOWUyMmI2ZWQ3NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2I1Y2RhNzdkNjY4YTZmYjJjMGI5OGM2YThiODMxOWZlODY3NzY0YTA5NWEzMDJiOWM3YmZhNmQ2ZWRlOGFhMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2RiNzU5MzdkMzg0MGMyZjU2ZmM3MDg1ZjFmYjg3MWVjMTNjNWE0YzdjMjkxYjBjYmZmMDc5ZWIzNzlmM2RlNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDU0MmMyOGZkNGNlYjk1OTFiNDJlMTU5ZDliZWY5MWM2MTRhYWNkNzE0ZWRmM2QwODc3MTk5Yzc1ZmY5OTc5ZiJ9"
+        },
+        {
+          "resource": "repo://libs/code/deepagents_code/sessions.py#L1049-L1087",
+          "version": "repo-lines-v1:sha256:e148e053c4c3bf2e57aeece8f4c9b708d115865e2d971706d3ae82b9b10094a7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzM2IxNzUxODE0N2YyYmZkMmJjNzEyMzJhMTY5ZmJmNjVhNDJmNGU0ZTRkYmVmNWEwMzVmYzc2ODNjM2I2NTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5YmE5NWNiNDQ1NTEwODQ4YmVhYTMzNGQ5Y2VhODQyNjI0M2IwYmJlMGQ5MThiOGIxNjIxNzJjYTgwMTg2NzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMzNjlkZWZhNzRkMGYwZGQyMGJhY2Q3OGU1MjVhMzY1MTQzNzI3NTNiYWZlNDg1MzEwZjZlY2E0ZGU3NjUzYWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFmM2JlYTIyYjM2N2FhZDc2MmI2MzhhY2FhN2MyNTc1MWM5ZDkxZDc2NTBkMDBkOTViYzliYzkyZGQxNzk3Y2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_97f1b4409573442d8f9ecbee8ca02993",
+      "statement": "dcode persists thread names in the separate dcode_thread_names table, prefers that durable name over checkpoint metadata, and falls back to the latest root-checkpoint name for older stores; atomic conditional rename preserves an existing name when automatic naming races.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/sessions.py#L1906-L1973",
+          "version": "repo-lines-v1:sha256:f3cd67e72d43d282e073789578e22e33d848cda21f05c5f28b8d19e2e491a920:eyJzZWxlY3RlZExpbmVDb3VudCI6NjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlNTY3ZmJlMDlmMzcyZjY0YTAyZDQxMjZkNWNjNzgzNzI2ZmRlZmYzODNmNTEzMDk5ZDAyYzM4ZjcyYTRlZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwZTJhNDY1MDA5NWZhOTVkMGUyYmI0MWIyZGIyOTA5NGQzNDA0ZDI4Y2UxMjMzOWVjODhiYjRiNWM1YmU4ZjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0ZmYxODQ1YmQ2ZmY2MzljMzVmZDNiNTE3N2RkYzNjZWQwY2QyNmRjNjc1OWIwMzlhZjlhN2FjZDE2ZTc1MTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhM2IzMjI5ZThhYjgwZmJhOTY4OWY0Y2VkOGE0ZmQwNGQ0M2FlYTU2NzM5Yjk3ZmQ1OTRiZjgyY2YwMDg2MGMifQ"
+        },
+        {
+          "resource": "repo://libs/code/deepagents_code/sessions.py#L459-L499",
+          "version": "repo-lines-v1:sha256:dc50d6a5381b6b887259674cdf201790f500d6f76f895bda1e119c06d5c5d508:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0NTZmNTlmMzJhNGZmMzlkY2I3ZjU5OTIyM2JkYzA5YjBmYTUxMmQ1NmZmMjczYmRjMzIwMmEzYWY4NmMxZTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxZjczMWIzYjUxMjI0ZGIyZDI3ZTFhNGYxODVlZGYwYjM1NzA1MGNmNTFjMjU2YTFjM2UyNTU1YWFhZjg2NzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmMmIxMDFhM2M1ZWMwYWYxNTM0NDg2MTUxMTFhMzA0ZjM2NWI2M2I1Y2YxMWY2OGIyNjcyM2E1NTFkOGMxODEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4486faa8141046eb9cd5a2bc157da42f",
+      "statement": "dcode guards aiosqlite connection opening against cancellation by retaining and explicitly closing the worker-created SQLite handle, and drains the worker thread after close so session and checkpointer lifecycles do not leave teardown callbacks on a closed event loop.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/sessions.py#L75-L193",
+          "version": "repo-lines-v1:sha256:eeced9de7a5a3e32222eaaa05f8b93d644f40b30ad2da654d504207a07f4b66f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhMTI4OWRlMjUzZDgxOTdhNmMxMmJkNTFhZTBkZTczNjkwODI2ZDdmOThjZWYwNzFlN2VmYTFkOTQyZDhjYWY4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1NDU0NGM5ODVlZjkyYmVhYTVhMzQxZDA2NWQzNzc4OTgxZDhkOWU3NjA2MjRjYzFmMjRlMmNjN2I0ZmVlMmU2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlZjg0NjliYzUzNDM0ZWFhNDEzMzAxMzk3YTBhMTBiYmZjMjllM2IzMjQ5ZmFhMDU1ZmEzMTQ2ZDAwY2RjMzgyIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI4ODZmYTQ3YWJhY2ZmN2Q4NDQ5NGIwNjU5YWU3YTQ5MjU3ZjhjZmZkN2M1ZTA5MTZiYzZhMWY3YmJhY2QxYjRjIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_0348b04e54544e3198ef61ade21db89b",
+      "statement": "dcode deletion acquires the thread lease and removes checkpoint and write rows together with names, message-count records, prompts, and side-question costs; it then best-effort removes the thread’s compaction archive and hashed-prefix handoff recovery snapshots without changing the checkpoint-deletion result.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/offload.py#L366-L466",
+          "version": "repo-lines-v1:sha256:91d5c240ce9a294057659abca2cc2a0c7ff36f14794539765ba4832bf516512d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIyNjJjM2I0OTc2NWU3YzhmOGZlNGNjOTZmOGM1ZDBiYjMyZGQ2OTE5MmI1OTUwNWQ5MzgyODI2OTMxYjg4NjNjIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIxOTFkMzdmOWIxOTFjOWExN2YyNWIwZTA3MmYyMjY0YjA5Mjk0YmU5MTg2MGIxZTk0MTViN2M0NzdkZGFhNDljIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIyNDc2MTE3YjI3OGM4ZDI2YzdmZDg2MDMyMjIxN2E0MDNhNzYzMmQ2OTdiODZjMjRjMGRlYThhMzU4YmMyYWZlIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        },
+        {
+          "resource": "repo://libs/code/deepagents_code/sessions.py#L1976-L2045",
+          "version": "repo-lines-v1:sha256:5e95598a9432d717444fd9454a9efde09595ee98335c0f60a22908e8987097e6:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlODkxZmVkNGNiNDE4MDQ4NTBiZWNiNGIyMTE2OWRkMGIxMzE5NGY2Zjg1NDdhMWIxOTk1Zjk1M2E3MWE5NDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxMTBjYmFhNmU4YmVhMjQ5ODU5MTBmMWI5NmJjZGZjODU1YjM3N2JlOGM2OWM5YTIwOWY5ZmVkN2ExODZmMDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlNzU3NWMzYjc3NzZjZjJmOWMyYmZiY2E0NGYyMTQ4MTNhNzgyN2VhYTljMzg0NTRjNzAzYjY4OWE3NDQzODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxNDJhMTBkZGU0YWEzMzFlNzY1MGM2MGNhY2VjMTljNzkyYmQyM2EzZWZkOTA0MTBmZmM5YzZkOThjZWQzMWIifQ"
+        },
+        {
+          "resource": "repo://libs/code/tests/unit_tests/test_offload.py#L721-L799",
+          "version": "repo-lines-v1:sha256:2197823a4e818628aa617f8db53e0ba8c450a164ef29551ceddb85c20941139e:eyJzZWxlY3RlZExpbmVDb3VudCI6NzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzN2U3ZjIxMWUwMDQ2MTkwZjk0YTBjMjcyODQzZmU3M2ZlMDg3NDNhN2NiZTY4Yjk0YTYxMmExMzgzZDIyMTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmYTZkM2M1MzdkZGYyMzM2ZTQ3ZDhjMDA1MDA4NGIyYTA0MDhlYjFlNGJlYjE3MjA1OGFkOGYxODFmYTRjMjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3NTM1MzFmMDkzNmYyODc1YTk0ZmYxZTQwZTVmMTIzM2Y3NjdhNjlmNzZhYTE1ODdhYjU4YWIwZjY2ZTQyYjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlMWFlZmNiZWFhMjcxYzAxODZiNjIyNGY4OGVhMTQ3ZWYyMjk1ZmI1ZmUzNTMwZmI1OWUyNDNlYjNkZTlhNmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_676e7f1c0b164f889685b1745fd6943f",
+      "statement": "dcode reserves writable threads with operating-system locks and fencing tokens; every owned saver checkpoint or pending-write mutation validates the current lease, and deletion refuses a thread reserved by another client.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/sessions.py#L1976-L2041",
+          "version": "repo-lines-v1:sha256:208c93fed85cc916ab6b26fc23d326a3e2619e94bbac552b807237016fda3c24:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjZTNhZTY4MWY4YTUzOTY5MTQxNzlhZjU2ZjZhODJkNmE1YmE3YjM2ZjFjZGYxYjhhNTIxOTk2ZGY1NzdjZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgzNjg3ODQxNGFjMmIwY2ZkYzA4MGQyNDEyZjBiM2RlZGE3NDEyMWJkMTVhZjUwMTJlMjNmMGM0ZTVmNjZjMjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYyMGU3MjExZTM0MThjMjNlN2MwYjc0ODRkMDc1YzM5NzgzMTU4ZmRiYjMwNmJiNGQ0OThjMzczMjQ2NTc5NzIifQ"
+        },
+        {
+          "resource": "repo://libs/code/deepagents_code/thread_ownership.py",
+          "version": "repo-file-v1:sha256:f9b4e477a452290d3147b5c5030bd72e5e2c3a55676829891cc0ebf3cbc4e398"
+        },
+        {
+          "resource": "repo://libs/code/tests/unit_tests/test_thread_ownership.py",
+          "version": "repo-file-v1:sha256:b4af7b7fb66e7aa642d3b10d1db8763bd719e199465f8b3f9b5008f283fb1590"
+        }
+      ]
+    },
+    {
+      "id": "claim_f21533d857ae4880a8d4b400af354b70",
+      "statement": "dcode checkpoint rows write every graph state channel inline on each step without blob deduplication, with messages the only delta-encoded channel; large or derivable values should therefore live in per-thread side tables rather than state channels.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/AGENTS.md#L154-L164",
+          "version": "repo-lines-v1:sha256:cfbe3b37b9c72f9b67382d3c13ba5e40144dde65d8ffc77df818f243fbe8e254:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxMDcwOTM4MzBiM2ViNTE5N2FjNDBlYTVmYWZjNjQxYWQ3ZGM2NWZhMzQyMjM0M2QzMGQxMzlmOGIzM2VkMDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2MWJiYTg3MjQ4ZjA0Y2UxODZkMjQ4MGM0NWQxZGZhODhmNWRiNmMzMzFlM2UzOGQ5ZDhjZmM2YWFlYjk0MWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlOGUyY2FiZWI1YzQyOGY0ODUwMGEyMTI1Njg3YTg3Mjk2OWFlNzlmNWQxZGE1NjU2YjYzMGJmMGM1ZDc2MTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhZWU4ODU2M2VlYmMyOThkOWY1YmIxNGY3M2YxNzgyYjZiOTRhMzAzZjViYTRlYTU2YjAzMGM0NDVkYWMxMTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_70468efb53d340039ac60e87de225760",
+      "statement": "Local offloaded history uses a hardened conversation_history directory under the user profile when possible, falls back to ephemeral private temporary storage when unavailable, and supports a non-raising retention sweep controlled by history.retention_days.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/offload.py#L164-L252",
+          "version": "repo-lines-v1:sha256:ba9cb4205bcefc742fe7b93e451fc8acb2dfd1d81fd3ce2c7ac733e11f1ac0ad:eyJzZWxlY3RlZExpbmVDb3VudCI6ODksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzNWNjMTI4MzdkZGQ3ZmU1ZThlYmQzNDQwNDViYWJkNTQ0ZGVmM2Y0ZDhiYWQyOTM4M2Y4YmM0N2NjNThlYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5YzI4ZGZhYWVkMThlNGNhOTBhNDZhMjM2ZTdlYjVhZmU4MDY0ZDMwZWRiMmY3ZTM2NmFiZWI4MjkzN2RmZDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3Y2RiN2JjYzcyMTQyN2JmYjU4ODk3OTI1M2MzYmY3MjkxMzRiMTRkZDdlOTE3ZjE2ODA1OWZmMDUwYTdmMmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwMWU0MGE4YTI4ZmYwMjA2MTAwYmJmZWE0ZTYwZmZiNDcwYTEwY2Y0ODA3MzA0OTI2MjJkZWM2OGM4NzdlMTQifQ"
+        },
+        {
+          "resource": "repo://libs/code/deepagents_code/offload.py#L255-L363",
+          "version": "repo-lines-v1:sha256:e299e8842e17da8c9924f02cc3671c7f3d831f661f926be441e7ded0fd95708d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI4OTZmNTE3MGNmOTljYzVkZTFjMjQ0NWNiMWY5ZjM5NGYxODMzNzlkMjg0ZTE0MjI5YzcwMzFiZjcwMTJjZWZmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1YTE2ODA5YzA3NWRiMzA5ZTA5YmJjOWFiN2VmZWU2OWVmYjVmNDE5YmQ0ZDg5MzBkMDM4MDY2MDJkZDAyZmQ0IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJjYWUwNjc5YTUyMTkwY2ZjZjc5MTZiMzdkOWFlODhiMzcwNmQ5NGYyYmE4ODhiZGI1NjUzM2RlNGVkMDMyNmM3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjMzFlNDJmZmZjNjVhZmQzZGQ2ZWJiNWE5YTY5NGFjMGNjMTEwNDc4NWU3YzBjNDBlMmFjYThhM2I3MGQyNzc5In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_30d857fcc3c441339a82efc5f8694f37",
+      "statement": "The server-owned offload boundary serializes each thread, requires an idle registered thread with no pending graph work, rechecks its checkpoint after compaction, and permits only OffloadStateUpdate channels so it cannot write messages against a later checkpoint.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/offload_api.py#L1089-L1268",
+          "version": "repo-lines-v1:sha256:089e56bf5017f46c9618ffae352a2e0a56e8204cd7b83ff5de8cab325fb851a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI5MTk1NGRhYjdiZjdkY2E2ZGFjZGRiZWQ0M2JlZjViYjY2MGQ3NmE5NmQ3ZTUwZDJmNDBkNmQ5ZjEzNDMzZGRhIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1OTA5YTUzYTYxOGQwMjhlMWQzMDAwYzBhN2FiY2VlY2JlNWZiMzdmNGU1MTFlZmU0NjY0M2ZhZDZlNjY4NzJmIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlZjkwNGQ4OGRlN2ZiZTIwZDQ2ZTA5NzA0ZjFlNWY4ZmNkMzI1N2RlNjAzN2EwNDFhMzQ5NGQ5ZTgxZjZlOWFjIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI5NDBiZGY1OTU1NGY4NDQ4Njg1Zjg1ZmIwYTFhNTA4NzMwNDU0YzBjMjlhNWVhMzgyOTkxZGM5YTI2MmQ1MDM4In0"
+        },
+        {
+          "resource": "repo://libs/code/deepagents_code/offload_api.py#L73-L97",
+          "version": "repo-lines-v1:sha256:c2fc374293f4b5b497f7de2f374d775a9a54df6e4b6816e8097e9de0ac5d448e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2ZTNlZGYxMTRjMGJjNzNkMDc1OTM2YzQ0ZTc5NDRhMTIxZGI1OGJhYTlhNTFlNzAzMWE5ZGZjMmRhNjUzZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3YmQ1Y2UzYzNjMTgxZDRmZTAxODlhZjIzYmM0Yjg5MDY3YTk3ZjYxMmU3MTM1NjlmMTFjNWU5NjQ1ZTlhMmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1YzFjNDYyZTJhMzlkNzQ3NTlmNWUxYjEyNmY3NjgzYTJiNzMwMTE4ZTE4ZjUxMjJiMDhjZWRlZWI2NTBlMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyNzUzNjU0YzQwMTRkNWFjNTQ0YmIyZjJlOTlhZjExY2E4ZDI4MjdlMzYyZGY1Mzg2MDYyNzUxYWZhMzJhYTUifQ"
+        },
+        {
+          "resource": "repo://libs/code/tests/unit_tests/test_offload_api.py#L2367-L2389",
+          "version": "repo-lines-v1:sha256:30ca407d9083d5c351253c83b43e4840dcfa2aa6f02065e053b9141d74c2e182:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlOWE3ZjI4YjY0MGIzOTNmNmI2OTViNWE1NWUwMzVmNzY1M2U4M2JkNWFkZmNkZTQwZjNmN2UyMDMxMWRmZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjODQ1Yzc1ZDE0ZTQ4MWJjMTRkMWYyOGQ3ODhhMGI2N2ZkYmUyYzczYmJhOGQ2ZjQzNTBhMmJiMDcwMWFhOWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmNWU2OTQwNTg2NmEwN2EyN2Y5ODM4ZmUyMDlkYzU3ZWNmMTA5ZWFkNTgwMTViNmNjOGRlMGY5YzExMjA0Y2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmZTc1ZDM0NzQ4OWI0YzY1MmIzM2Y4NWUwZGE2NTFmYTZmYmU5YTk2ODI2ODc5Nzg3Mzk4Y2M3ZDRmYzJhNjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e45aa3f16cd34127bf5da06a91fe95a1",
+      "statement": "Server offload treats client context as untrusted: it strips client-supplied transport parameters and restores model selection and parameters from checkpointed state, preventing a request from redirecting credentialed summarization calls.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/offload_api.py#L557-L634",
+          "version": "repo-lines-v1:sha256:0ea454049dd2e3ffd06a99051957d9f8aed85444c334d35c1d1d66263aecb063:eyJzZWxlY3RlZExpbmVDb3VudCI6NzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkYTg1YTQ1ZWQyYmJkMTk0ZDI1NWM1ZDg2N2VhMjAwNjJjNjM5NzU3YmIxNDYwN2RiMjMwNTRkMDQzMGJjOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5OWRjM2I5Yzk5ZTA4OTc3YmI2YjRkOTIwY2ExZGQ3NmI1YTMxNGM4ZTE4MzU3ZDFiMjNkNGY1MmFmMDYxMmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZWI3YjlmOGMwOWY4MTE1MWRiZWVjYjlkYzRiNDJhMTZiZjU1NzhmOTkxYTM4NWUyZjE3ZDg0MjAwNmNlYmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3OTQ4MWQ0ZTU0NTZjOGU2NzlhMjY2ZDIyMjI5YThjOTBmYzE2YTAwMWRlZjJiNzU3Zjc2NDgxZTBkZGE5YzEifQ"
+        },
+        {
+          "resource": "repo://libs/code/deepagents_code/offload_api.py#L772-L811",
+          "version": "repo-lines-v1:sha256:f5926fe9a8e592b6a857724df20b6a3cf6639bf6a41e3e7af124a37c40b409fa:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmYzg3ZDA4NjFkYzc5OTU3MjkzNGNmM2Q3MGQxNmY0YjkwNjRlY2Q3ZGIyNjZlZDQ1M2FkMWFhZWE3YWM1ZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwZTA2NWYzYmI3MzgzYTE4Mjk3YjlmYzgwZDZiZWQ0YWQ1NzI3MjhlYWQ0NmFmNmI2MDQ0NmIzOTUxZmQ3OTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFhMmNhYWEyMmU0ZDFmYmJjMGY1MDYzMDVkZTdlMzhlMzg2NGUwNTkxZGFlN2ViYjNkMzJiZDZjYjVhZjMxZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2MDJlYTYxMmIxOWYyMTAyYTNmN2MyOTIyNTYxOTYyYWEyNzQxMDc0OTBkOWE2MjZkN2E0YTk4ZGJkNWE1NzYifQ"
+        },
+        {
+          "resource": "repo://libs/code/tests/unit_tests/test_offload_api.py#L545-L619",
+          "version": "repo-lines-v1:sha256:0c889effc7aaf93c93bba9a014a7391519941df9bc3c1f2f6fa7a86759ee344f:eyJzZWxlY3RlZExpbmVDb3VudCI6NzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4OTkwNDllY2Q3ZmZlNWRlOGFlZGNiODA1NTJjZWFjOTkxYjdiYjY2YjJkYTA1OTAwMmEzYjNhMjlmYTk1OGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxMGMyMDRlNGZjZWUyMjAxMWJlMGIxZWVlMjBlNDlmYWMzMmM1ZjU0NzQzODUxYTlmMzBlNzQzZjZkOWQyYTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkzM2Y1OTFmYjMwZGRiMTJhZWIzMjE3NTJiMDEyNjRlYTYyMGJlMmZmZDUyNjQyZTczYzc5Mjg3YTllYzgzZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhY2NmOTRkN2FlZmU3M2NjYWEyYjEwODkwZjIzZDRkNjg0N2ExMjJkM2VlYWU4MDVkOGU5NjRkMmQ1ZjA4MzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7ffd12f1609b40d08aa2f1483db78160",
+      "statement": "A cache handoff leaves the source context uncompacted, writes a source-owned recovery transcript, and seeds a new child thread from the returned summary; the client mirrors a local discovery seed only when server checkpoints are not shared.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/app.py#L10171-L10315",
+          "version": "repo-lines-v1:sha256:c18fbc38abc3b15f7b00b6ab6874021a08ff45e16512d1e710c229a692b589d6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQ1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkMmVhMTM2NzRiMGM2ZWMzOTQyNWU3Mzc4YzdjODZjMzdjYzEwN2QxMmQ5OWIyZTA5MDAzMDY4NDdkNDM0YjA4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiZTdmNjE1NDg2MTdmZWZjYTU0YTUzMjVjNGIyN2Q0ZGYyYzA1NmRkODYzZmNiNDAwZWE5MGRlN2VmNThiNzQzIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI3ZTEwMjc5MDFiMzZjZTFjOWUwMTE4MTZlMTM2MThjOWFiZDU4YzU3MmZjZDRhYzYwNjc5NDc2Mzk0MjI3M2I1In0"
+        },
+        {
+          "resource": "repo://libs/code/deepagents_code/offload_api.py#L1044-L1086",
+          "version": "repo-lines-v1:sha256:695fa82ae9701779eaa9ac131fe70d11fa27b80b83dcd2228a6de6023fd0ca01:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmYjczZmQ2OGMyMDVkNzUwOTI1ZGQ5MGE3ODcxNTEyM2I4ZWZmNmYyZTY4ZjdkMDFmMjE1M2NjMGJjMjIyZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYWJjZjhiYTY0MGRmOTNkODM5MGNjZDEzZWM2YjdkOWY2NWNlNDc1MzQ2YzQ4YjBiOWE3MjU3MzM0NzY4ODkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1YmIxMGE4YTZiMzc2NDMxZDk0NzFhMDI5YThhM2YwYmQ0NTgyZWU0ZmQ5ODE2NTc4NjZjZjdjMThiMmNmYzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwMDhiMWYwOWY2ZWVhMGIzYzQ2OTY1NzFmNzQyMzE5NjE2ZmEwNDU3ZTNiODIyOGUzOWI0Mzk0NTU3ZmQ0YTAifQ"
+        },
+        {
+          "resource": "repo://libs/code/deepagents_code/sessions.py#L2070-L2105",
+          "version": "repo-lines-v1:sha256:6864bda539d386c737906bf1856ec64f878d3eb984a6ffbe826530b06e08bb5e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwMjU2NWM1ZjY2NDcwYjU3NGFiMTFjYzY1ZmM1YjYyN2Q2YzBiNDg3NWViMTFmMzM4ZWY4NjliZDE4Y2MyYzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkNGRhNTQwMDM4ZmRkNjE1ZGJkZTQ2YjVhMzA3Y2MzMTk1OTBjM2Q3M2JiMmEwYTQxNDAyNzM0M2Y4ZTkxYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxNmU4MTY4NGUzNGNiN2M3NTVjMWM0YjYyYjZiNGYyNDI2YzI3ZWE3NWU1NGMwOTYxMjhiNjg0YjY0ZWYxN2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4ZTE4YzQwZDQ0NGMyZjNlNWFiOTllZWJhZWJmNTBiMDAwYjMxNTQ1ZmNlNTY0MWFhMWI0OTlhYTdiNGI4OGUifQ"
+        },
+        {
+          "resource": "repo://libs/code/tests/unit_tests/test_offload_api.py#L932-L999",
+          "version": "repo-lines-v1:sha256:f99629ff314f3e4701781a929e9a5b37f3ed36e3d82b4134562424cdda66707e:eyJzZWxlY3RlZExpbmVDb3VudCI6NjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5NjE0MGE5OTQ4NzhlNTkyNWFkYmM1YThiODRhZGE3ZmQ4YzhkZTkwYjA2NzE3NGEyZTc0OTVmZjE1ZWFkOTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MTM1ZDMxYjAxYWM0Mzg1NGJmZWQxMzAwOTZmNjlhOGViMjA3Mjc2Mzk3MDNkMDM5ZTg3ZmVlYmQ3NTAyNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwN2ZmNjZjZjU3OThkNGQwYWIyMDU2NTQxYmEwZjBhZTRhNzJjOTIxZWNhZjg4MWU0YzE0MWY3MjI4ZWU0YjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0Nzg4YTMzYmJhOWQ3ZTdiZDllMzA2MTVkMDJmYjM5OTQ2ZGM5ZjYxYjIzMWZiN2RjM2I5NjliOTk3NjZiYzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e790de45b8a64767ac9a77af93480531",
+      "statement": "The development-server scaffold passes the local sessions database path through DEEPAGENTS_CODE_SERVER_DB_PATH and generates a checkpointer factory that installs delta-history forwarding and uses the ownership-fenced SQLite saver.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/client/launch/server_manager.py#L123-L170",
+          "version": "repo-lines-v1:sha256:d3f1b54aafb95288c26385d11144b2e7eb2182b448697f26306b6deca058eced:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxMDI4YzY4MTEzZmM5YzNjZmU0MjdmZTRiNDE0MjU5ZjkwY2IyYTA3NDYwOWQ4YjZhMDcwNDEzZjdkNjE4YWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljMzE1MzA4MWUxYTRlOGU4MGZlMmRiOWM4MDljZGRhYzM4ZmEzMDJhYmY5MzBkNzUzYmZiNGM0YjJkMDg5MDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiYjE2ZDU2MWU1OTk3N2I4OTM1NGQ4M2Q4NGVhNDFlN2NhMzY0ZWQ3NDgxYTllMWRlN2ExNjE5NjBmZGZmNjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4b86337be0ea489cbeababf992457a40",
+      "statement": "The delta-history forwarding patch is an idempotent best-effort compatibility shim for langgraph-api’s private custom-checkpointer adapter: it forwards to an inner saver only when that saver overrides the base delta-history method and otherwise preserves the base ancestor walk.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/_checkpointer_adapter.py#L1-L15",
+          "version": "repo-lines-v1:sha256:83487cf4d86327399eea425bb37020be7e1f3e6bf39466c47ace3e5edd8d820b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxZTE3MDM2NzAyZDU4YmY1N2MwM2U3YzdjZmYwNWFhMzFjYTZmMmQ3ZjRkZDM4ODQzMGEzM2NhNzc3YTZlNmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1ZmI1NGRjNjE2Y2UyYWJmOGI3MGE0ZTJjODM2ZjkxMzQ5MGFlOWJlYTc0NmZjMDhiYTQxNDJlYmZlMDIzZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhYWY3NjM3Y2I2ZTdlNWRiODVkNjM0Mjc0NjAxNGRmMDQxY2NkNTU4YTkyMGIyOWViNmFjNzE5ZDdiYWY1YzIifQ"
+        },
+        {
+          "resource": "repo://libs/code/deepagents_code/_checkpointer_adapter.py#L37-L86",
+          "version": "repo-lines-v1:sha256:878b56449aea1f544b5d5edcaeb91cf4d61e955b87446c5a348d11e3e9530ae4:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwODY4OWJjNGYxMWQxZGUxMjNhYjcyZDVhMzQ5ODQxMjBhNmY4MzM2ZjI5MjEyMjc5N2VhM2I2NmYyMmExMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwNzdhOGVhMTRkMmViOWU3ZmMzYjVjZjQ5ZGFlNjkzNzI3NWNjMmNmMmVlOWIwYTU2N2VhNmFhMTQ4YzFiNDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzNTY0NmViYjlkZDMzMTg4Yjk0OGM0ZDc2MjA3Mzk4MjQ1YjQ0OGY5NzU4Zjg3YTE0ZmVmYzJhMTNjOGI5YTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.4.2",
+    "at": "2026-10-25T08:05:05.473Z"
+  }
+}
