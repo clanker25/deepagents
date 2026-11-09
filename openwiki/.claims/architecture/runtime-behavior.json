@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6e1ee21f137adad83c9213374668e7b42c77d183395763d4dd18988bcaf08574",
+  "claims": [
+    {
+      "id": "claim_a5c4fa3891d944d7b5fcaedbdc3e4ce5",
+      "statement": "Deep Agents summarization preserves raw `messages` and records an effective-history `_summarization_event`; it persists history before summary generation on the synchronous path, runs those independent operations concurrently on the asynchronous path, and continues with `file_path=None` when history offload fails.",
+      "evidence": [
+        {
+          "resource": "repo://libs/deepagents/deepagents/middleware/summarization.py#L1667-L1769",
+          "version": "repo-lines-v1:sha256:6b1b47c4e972ed8cc831bdea9b0b462655ce7a6f9dcd4d2812707950000dbdcb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxZGU1MjdlNzdhODgwY2Q3OTlkYTY4NzNhZWMwM2QzZTE1NTRkNTZmOTFkNGJmYWNkNDYxYTQ2ZGQ0Y2VjYjBiIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIyNjkwMzY1OTIxMzFmYWI0NDIwMjgzNGY3ZDQ0MGY2MWQ4OWNkODk3NDY1N2RkMTM1ZDRjN2FmZDZkMTI1YjMyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIwYjUzMzY3NzIwYTM2NWQ5ZGU0YTA4YzQzMDIxZjgyMjM2MGZlOWYxYjU4Y2QyMmI3ZjAzOWQ2NDcxN2ZjODRiIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIzMzdiZWQ1MWJmMzcyN2JlMmEzNDU3MDIxZTQ5OTI1ZmZkNGUwN2IwNGM5NmZjNGZlNGVjMmU3NTc4YmYxMzY3In0"
+        },
+        {
+          "resource": "repo://libs/deepagents/deepagents/middleware/summarization.py#L1808-L1912",
+          "version": "repo-lines-v1:sha256:4679f0a2969d1d66c2987f77fe6e616fb711b8e47038f36f6d5758bf2338c736:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxZGU1MjdlNzdhODgwY2Q3OTlkYTY4NzNhZWMwM2QzZTE1NTRkNTZmOTFkNGJmYWNkNDYxYTQ2ZGQ0Y2VjYjBiIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1OTA5YTUzYTYxOGQwMjhlMWQzMDAwYzBhN2FiY2VlY2JlNWZiMzdmNGU1MTFlZmU0NjY0M2ZhZDZlNjY4NzJmIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIwYjUzMzY3NzIwYTM2NWQ5ZGU0YTA4YzQzMDIxZjgyMjM2MGZlOWYxYjU4Y2QyMmI3ZjAzOWQ2NDcxN2ZjODRiIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIyY2Q2ODgzZmVmYTZkMmJhMTEyYTdiNTY4MmFiNDY4MDE5ZDM1OTMyMWM5MGFmZjAxZjRlZjU1MWJhNzAyMTBhIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_dcb4c44fde43478a90f8797c93ff1594",
+      "statement": "A summarization event anchors effective-history reconstruction to `cutoff_message_id` when that message remains in raw state, falling back to `cutoff_index` only for legacy or missing IDs; newly created automatic and manual events record both values.",
+      "evidence": [
+        {
+          "resource": "repo://libs/deepagents/deepagents/middleware/summarization.py#L1736-L1747",
+          "version": "repo-lines-v1:sha256:76703870e21fed48542faf4a5a3f51616efb6f6a42e785569e9fdb479916c436:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3MjFhZTQ4MWM5Nzc1NDZkNmY4NzM5NDg2MWM1ZmQyZjk4NzVmZjUzMDc0YjJlODE0OGExNTBlMzAwNzg3MmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI3MjI5MDY1YmYwZTk2OTA1MzQ3OThhYTcxM2U4ZmIyZTZmNTY3ZTUxZDIyMDJiYjA1MGI4OGIwNjVmNzM2NGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2Nzk1NTU1Mzc3YTM0YzlkNGVlNjcwNzRlMmRmMjBkZmRmYzlkZDgwNDUxODhmNDNiMDFmNzc1MzQ5OGQ0NDEifQ"
+        },
+        {
+          "resource": "repo://libs/deepagents/deepagents/middleware/summarization.py#L2233-L2257",
+          "version": "repo-lines-v1:sha256:bac5cca3c120e3ff6670eb1df3cce6370f575e4f6c7639bfd4b391fdba358ab2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1ZWRlNmY1NDMwMGM2ZGJmNWFmYTRlMDRiNGNhNjIzMjg5MzMzM2I1ODZjOWM2YjVmMmI0YzA3MmYxNTVhMDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjOWI0ZTAzZWZiNzZjNDM5OGM4NGQ3YzVjNjQzMjA5ODdlYjlmNGM2Yjc0NzViNjU3ZmNlODhkYjA5N2NlMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4MDcyY2ZmNjQ1MmQyNmFhZmExMjRkOWU4ZDIwZjUwNGVmYTA5ZDIyYWI5YmE1YTc3ZGJlOGFhZDExNjIxZjYifQ"
+        },
+        {
+          "resource": "repo://libs/deepagents/deepagents/middleware/summarization.py#L574-L599",
+          "version": "repo-lines-v1:sha256:45a60f2685077a157c63693b65fb9587decddd80157d8f43c09160ca59076a88:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyODYyMDVkMmQxMTIyMzlhNjBlYjIwNjc3ZjYxYjYyY2QzZDViZWU2Mjk3OThjNTNjZTI2ZWUxZDc5MWNhMzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTYwMGE3M2QyZTAyZjM1MmI5MGZlZjFkOGQ2MzgxMWJhNGE4ZWUwYzFiZWFhN2FlNDY1OGYzNmFhMmUxOTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI4ODQ4NTZkMzFjYTNkOTVkZDc2MTFmNmZmOWIyOTU2N2E4NjFiM2FhOGY1MzU1Zjg2MGFjOGQyMmViNGRkOTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU3YTc5ZDg5MDljMzhmZWNiYjQwOGM3MzU5NDFjMDRiNWI5NTIyZGQwZWRiMjA5Zjc3NWI2ZDFiMTFkOWZlNTMifQ"
+        },
+        {
+          "resource": "repo://libs/deepagents/tests/unit_tests/middleware/test_summarization_middleware.py#L2750-L2967",
+          "version": "repo-lines-v1:sha256:079ae9a6be16090cac5f331300aaedc8f88cf8f2e7d60b299a67ac9cb837a48a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjE4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1NjkyOWFjNzMwZGNmNGJlZDg5ZTRiZjZiN2E0NjFjYmFiNDNjM2Y0NzdiMzA4MjNhMGQ5ZDNmOGZjZjg0Zjk3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI3YjZiNzEzYmE0ODZhMzcxNzk3ZjIyMjk5NTRjMGY0MDM2NjI4YWUzOGRhMjQ1YWFkNzQ4N2VjYjljMGQxMWYyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI5MTNmMWVkMThkZTk3ZDFkYTc1OGQxNDFkMWUxMmRkMzJmOWYxNTBjZmMzOGRkZTg3MzRjMDM4YmNmMjVjMTJkIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI4YjRmNTdmYTkxM2JlYWE0ZjM3ZGFhYTk5N2Y4OTFhNzNmYWZkZjBiOTM2MWM4NGNhN2EyOTQxNjJiZDI0MGJiIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_00d8e7f7d0024e6aad140a3d3944a464",
+      "statement": "Deep Agents installs `ModelRefusalMiddleware` after its main-stack fallback opportunity by default, so a main-agent refusal raises `ModelRefusalError`; an earlier fallback can handle it and a harness profile can exclude the middleware to retain the provider refusal message.",
+      "evidence": [
+        {
+          "resource": "repo://libs/deepagents/deepagents/graph.py#L968-L983",
+          "version": "repo-lines-v1:sha256:fb717ef85f7c9ecd2e874dde30bc85d8c57ac3fcae574d1256157f20309027e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1MmQyMmZiOWVhYTNmYjQ0MTJmYzBlNTQ3OGI4ZWIxYzUxZjllZDkzZjJlOTI0YzhhOTQ3OTJkZDQ4MmMwMzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2NDE0MmI4NDBjYTJjZjUxMTQ5MjYyNjRlYzgzYmU4MDY1ZTkzMWFhNzMxMGVmYWVlNGUzMzU0OGRhOWYzZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiZjBjYWEzNDVjMmUxMjA4ZDA5OTFjZDkwMDRiODUzNzdkOGYzOGRmMjM0MTU1MjM3YTllMTE1Y2I4Y2ExNGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmMjI5ZTcxN2VkOGQ0ZWExMDVmNGY3ZGVhYzRmMzk4MGEwY2QyMWVkZjExNjQ4ZTBlMzZlMjBkN2I5MDk5NDUifQ"
+        },
+        {
+          "resource": "repo://libs/deepagents/tests/unit_tests/test_subagent_refusal.py#L138-L157",
+          "version": "repo-lines-v1:sha256:871123e0e5d79270a2a548678c3186a91e70a4c69fdf01b90e08844c8b1576e0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3M2E3MjdkNmNkNjY0NTY0NTJiNjAwNGM4MTM0Y2VlMWY2ZmVhOWE3OGQxYjMyNTQyMGZjYmY5OGUyODIyOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmYWViNjcxMjUyOGJkZmIzNGRhNTIwMDY4ZTBhYTA1NGQ2MzAwNWUzM2IwMGUyZWNkYTRjODczOGNkZmMzMDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAyZDFmOGQ0NTdlOGQ4ZGRlY2YzZjA5OTk5YTcxYmYyN2EyNzE2MGEwNjEyZWQ0ZDk4NGM5MzczMGJlOTlmNzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIxYjdlMzhhZWQyODU0N2VkNzg3NTJmYTNkNWYxNTllZjVjZDkwMmY2ZmE5NTliZjgyNTE5NWZjMGE2ODk2NDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f5282f0c58764e8eb4791f1cb7b60006",
+      "statement": "For both `task` and `atask`, synchronous subagent refusals returned in a final message or raised as `ModelRefusalError` or refusal-bearing structured-output validation are converted to a parent-visible refusal result, while non-refusal errors propagate; async task final-content extraction renders the same refusal notice.",
+      "evidence": [
+        {
+          "resource": "repo://libs/deepagents/deepagents/middleware/async_subagents.py#L641-L653",
+          "version": "repo-lines-v1:sha256:2ddac103bd11ac29d8e7917e74d5f89a44d258417ad2525d3a9287e739604154:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1ZWVmNmNmYTBkYTM0YTBiN2U0NjFkNzUyNDljNjQ5YjZhMjBmMTgxMDMyN2NkZDMzOTU2ZjY0MTM0OTM2MjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0ZDJhMWNhZmM4OTA4NmU3NDg5YjBkYmYxMjJhNGI1NDgwNjg4YTQwODJiNjM0ZWQ2YzhjNmIxM2M0ODcxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEwMGM1ZjFiYmU2OTRhNjk0ODNkMTUwYmRmZGM4NzY4YmNjYTE1N2I5N2RmNmQ1MzE2YmI4MWZkNjAyMzU4MDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFlMjc1MTgwNWZmOTM2YTFkZDEyOWM1ZTc4MWZjYTIxOGYzMmEzNmEzYTMzMWM1MWJmN2I5MWQ1NjU5NWI0M2QifQ"
+        },
+        {
+          "resource": "repo://libs/deepagents/deepagents/middleware/subagents.py#L788-L815",
+          "version": "repo-lines-v1:sha256:730d166f1f47c7d3e14edac3e1f4fcb8b93da26eede889cd0c4a45a7f1c85556:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlOGE0ZmRkZjk1ZTdlN2M5ZGI3YjkxZjgyYTJlMDhlMmIyNmYyZmJlY2FkYzQxNjQ0MGYzZDU3ZWI1NjZiY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MjJjNDJjZDE5YzZkMDNkODA4YzQ1MjcyMDU1MjgyNWI3ZWExYzViNDkxYjIxODUxMWNhYzc0MTVjZjlkOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5YTkxOTU0NzJlODczODM4OWQyOTdhZDllMGMxMjY1MjA5MDFkMDhkYzdhNDRhOGI1YzM1OTAzMmNlNzQxODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhYWQ3MjQ2MjI4NGJkM2JmZjdmNzI1ZjIwMDIxMWY4ZTAwM2YyZTZlZDMxOWYwNzEyM2ViYWMyM2U4MjZhMTAifQ"
+        },
+        {
+          "resource": "repo://libs/deepagents/deepagents/middleware/subagents.py#L85-L108",
+          "version": "repo-lines-v1:sha256:b19793c00257b714f71eaea1eeb47bcc950cd2f01c0550ab0dc80b8ac53c1911:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5ZmIzODI4NDg2MzQwMjJlNmZlOTE2MDk2NjQwZmUzNmE0ZWQwM2RjNjNlZWYzODIwOWQ5MzVjMGMwOWYzMTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTYwMGE3M2QyZTAyZjM1MmI5MGZlZjFkOGQ2MzgxMWJhNGE4ZWUwYzFiZWFhN2FlNDY1OGYzNmFhMmUxOTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0MDRlMWY2NTY5NzUzZTI1YjQzNjdjYzNjOTM4ZTYzMDFlMDAyZTE2YjA5OTFmYzlhNWE0MjBjNzg1NTc1MzMifQ"
+        },
+        {
+          "resource": "repo://libs/deepagents/deepagents/middleware/subagents.py#L867-L945",
+          "version": "repo-lines-v1:sha256:ff83d6987eea5d707908c118ae1e90ecf138fa17717696dc76cff8c6c81eb003:eyJzZWxlY3RlZExpbmVDb3VudCI6NzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZDlmMjE5MzZhYjc0ZDQxMTQ5MzBkNDY1Nzc2N2I0MGIxZDYzZmMyY2U0MGUyMzE3ZGMwN2UwOGE1MWIwZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyYWNiNzdkOWM5ODJhMzkwOWU0MDlkNjI0MWQ1MmYzNWVjMWVhMWVhYmM0NGY0NTZiM2JhZDZjZDJlZjFlNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkN2EyOWJiOTUxNDRmNzExYzkxMGNmMGM2MTRkNDZmMDkzZDYyMjZmNDc2ZDQ0NzJlZjI1NThiMjE0YjdiNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYxZGJkZTYzN2MzOTAxZWY3NmM3NjM5NzI1ZWNiOTgzZGRjMmZiNTQyMmI3NzU0YjMzNTg2NDJlODM1YzQ2ZWQifQ"
+        },
+        {
+          "resource": "repo://libs/deepagents/tests/unit_tests/test_subagent_refusal.py#L160-L175",
+          "version": "repo-lines-v1:sha256:bd6b50b48f50bbbe9521d3af6cd43c13bea56efbb6da8747e5acfeaa174078f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxOTZkNGVkZDdjNzJkYTQxMTJiM2IzZjhiZGZjYzMxYzVhNTljMWUyODRlZTMzYWRmZjZlZmUwMGY1MWE3ODAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwMGZlYzc3OWE3MDRlZTUyZDIxMmViMDk2MWFhMmNmZGViOTY4NWMzMjcwZTdiZTZjZjQyY2RmNDgyODIyZjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkYWNiOTIxYzQ5NGEyNGJkNWY3NDU0ZWFiYmQ4OWQ0ZmRmNTc4Yzg2M2FmYmNlZmM1MjEyMDFmZWE2ZGJhZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://libs/deepagents/tests/unit_tests/test_subagent_refusal.py#L80-L131",
+          "version": "repo-lines-v1:sha256:55c29c217ae02b1a4b53ce802dc4311a092949ea3c58919f42e41d80ec643116:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxOTZkNGVkZDdjNzJkYTQxMTJiM2IzZjhiZGZjYzMxYzVhNTljMWUyODRlZTMzYWRmZjZlZmUwMGY1MWE3ODAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0NTIyMzBjMjgwNmM3YzdiNDA2OTFiZDZlNjI5M2FkN2NiNjdiODYzY2Y5NTRiNjQ4Y2RiOGM3Y2MxNTM2NjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmNDA5YzY4MzYyNWVjZWJjZjY5M2RhOTQxY2U2ODQxNWJhNDVhYzcxNjA5MDM0ZmFlNTNjYThlZjEzYTZhZjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4YTg5MjI0MjA5YmRhNjI0NmI2MzY1YTdiNjJhNWRjZGFhNTE4NTdjZTk0ZjdlZjg5OGQ3ZjI2MjUxYTNjYzEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.4.2",
+    "at": "2026-11-06T08:04:19.814Z"
+  }
+}

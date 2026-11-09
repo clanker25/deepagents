@@ -1,0 +1,8 @@
+# Files
+
+- [Deep Agents Code Architecture](code-agent.md) - dcode separates terminal presentation from a local agent server. This page documents that ownership boundary and the retained, lazily expanded tool-detail path that keeps long transcripts responsive without changing server execution.
+- [SDK Middleware Assembly](middleware-stack.md) - Explains how Deep Agents assembles, filters, and compiles middleware for the main agent and its synchronous and remote subagents. Covers profile exclusions, custom insertion, refusal handling, tool filtering, state isolation, and approval behavior.
+- [Repository Architecture Overview](overview.md) - Package graph, release and Python contracts, published dependency boundaries, and runtime ownership across the Deep Agents monorepo.
+- [Runtime Behavior and Failure Boundaries](runtime-behavior.md) - Execution-time contracts for stateful summarization and overflow recovery, model refusals, synchronous and asynchronous subagent outcomes, and delivery boundaries. Distinguishes durable graph state and remote task authority from best-effort observation and notification.
+- [SDK Construction and Execution](sdk-construction-execution.md) - How create_deep_agent assembles and compiles the Deep Agents graph, including middleware ordering, model-refusal handling, profiles, and child-graph boundaries.
+- [System Source Map](source-map.md) - Change-routing map for Deep Agents graph assembly, subagent result and refusal handling, async tasks, and Talon runtime lifecycle boundaries. Use it to identify the state owner and focused tests before changing SDK or host behavior.

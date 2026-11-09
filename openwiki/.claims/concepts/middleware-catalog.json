@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:fb5816a70dfa2f4baa55e73e14e88ad8051bc347031eb08e3864cd810c239095",
+  "claims": [
+    {
+      "id": "claim_e38cd332da3d45ddbc78edba46bb6079",
+      "statement": "SummarizationMiddleware reconstructs effective messages from a private summary event, offloads selected history before creating a summary, and preserves a per-invocation session identifier so later compactions append to the same history file.",
+      "evidence": [
+        {
+          "resource": "repo://libs/deepagents/deepagents/middleware/summarization.py#L1667-L1769",
+          "version": "repo-lines-v1:sha256:6b1b47c4e972ed8cc831bdea9b0b462655ce7a6f9dcd4d2812707950000dbdcb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxZGU1MjdlNzdhODgwY2Q3OTlkYTY4NzNhZWMwM2QzZTE1NTRkNTZmOTFkNGJmYWNkNDYxYTQ2ZGQ0Y2VjYjBiIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIyNjkwMzY1OTIxMzFmYWI0NDIwMjgzNGY3ZDQ0MGY2MWQ4OWNkODk3NDY1N2RkMTM1ZDRjN2FmZDZkMTI1YjMyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIwYjUzMzY3NzIwYTM2NWQ5ZGU0YTA4YzQzMDIxZjgyMjM2MGZlOWYxYjU4Y2QyMmI3ZjAzOWQ2NDcxN2ZjODRiIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIzMzdiZWQ1MWJmMzcyN2JlMmEzNDU3MDIxZTQ5OTI1ZmZkNGUwN2IwNGM5NmZjNGZlNGVjMmU3NTc4YmYxMzY3In0"
+        },
+        {
+          "resource": "repo://libs/deepagents/deepagents/middleware/summarization.py#L224-L237",
+          "version": "repo-lines-v1:sha256:843ff9cdd05e9dc6e632705c7b5272d29a91dc9e07bc88c1f675300a0e2085f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0MDk3NzZkZDA4Y2ZlMTlmMjBiNWRiYjNlNzAyYjU1YjMwYTg0N2FhMzQ3MmU2NWFlZWYyYTdiMTcxMGU4ZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3NDY2ZWJmODAwMDk3NmUzZTI0ZTUwYzA0NDgwOTEwMGEwYzE4ZGUyNGZkODE3YzNmM2E5NTNlOTk1ODZiZDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0YzAzODdkYjBjMmMxOWI1M2M0YTVkZTIxMzQ4ODI0MGYzNzRlMDFhZmUxYTdkMDYxZmMxN2E2NTIxMzUxNTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhMDExMGY5MzM3ZDBiODc2OWRlOTAzMTAxZTM3NjcyODA0ZjY1NWUxM2ViYWZhOWUyM2YyNzk2MGJlNWNiMmIifQ"
+        },
+        {
+          "resource": "repo://libs/deepagents/deepagents/middleware/summarization.py#L806-L840",
+          "version": "repo-lines-v1:sha256:7a639a36f7dfb8e2bde10a3d877ee7e980bc911b45063d8ea69869f7018e32b7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhOGFmNDQwMThiM2Q5OGYwYzYyZjY2Mjg1MDlkNzYxODg0YmQ4OTQ3MTIzNWQ2MzgyZDI0YTg5ZTFlOGUxMzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1ZWY5NmE1MGI2YTA1NDZhM2YwNWVlZTcxNTdhMGE2MWYzY2UxMGFiZWYzYzljMzEwYmY2ODk2MTAzZDRiOWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0OTVmYjE3MmRiYWFjODY4MjVhYzZiYzg1M2MwZWY4NWE0MTgxNGNmYjZhN2Y4N2E0ZTZkZjgwY2E4ZDNiNWQifQ"
+        },
+        {
+          "resource": "repo://libs/deepagents/deepagents/middleware/summarization.py#L902-L961",
+          "version": "repo-lines-v1:sha256:0620ffd152a762909295188b1b52689095bbca2ed4f9cf3868ce0b82c4a9e66f:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhOGRkNDhhZjg5YTYxNTI0YmQzNzRjOWJjM2ZlODNlY2FhNmI4YjJhODk4ZDI5NmZkYmQ5M2JiNDFhNzdkMWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1ZGQ2MmIyZWVlYTZkNjkwM2I1NzI1ZmZkYTRkZGZmYTkwYTYwMjM5NTM3ODllZWRiMmExOGIxNDk3OWM5MDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4ODUxNjE4ZmQ3Y2MwOWYzMzc4MDQ4YmE2ZTUwZmNkMjJjN2FhZDA5YzBlMGQzMTRjMjUxZTQ0MzU4ZWYxYjAifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.4.2",
+    "at": "2026-11-06T08:04:19.814Z"
+  }
+}

@@ -1,0 +1,332 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5c04cfa55345ac31557e9992f80f461538349092cb5e054ea069dee5b415113e",
+  "claims": [
+    {
+      "id": "claim_f69e854889dc465d8c71bec1dd14bbd5",
+      "statement": "dcode create_model applies its allowlist after provider inference but before credential bridging, provider profiles, and provider imports; blocked models therefore cannot cause those side effects.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/config.py",
+          "version": "repo-file-v1:sha256:d0c32beb542bb08f3fef9f9009fe8214757479440618f6cb38740aa8d993c934"
+        }
+      ]
+    },
+    {
+      "id": "claim_9f9f63740c054841b9eb29c7d35de7ed",
+      "statement": "The SDK exposes orthogonal beta profile registries: ProviderProfile controls string-model construction through init_chat_model, while HarnessProfile controls prompt, tools, middleware, and default-subagent behavior after model construction; both accept provider or provider:model keys and registration layers rather than replaces existing settings.",
+      "evidence": [
+        {
+          "resource": "repo://libs/deepagents/deepagents/profiles/__init__.py",
+          "version": "repo-file-v1:sha256:8b32157d05bc14682bedae0102114894187d1e04f043ea8e6f20401ecccd57ec"
+        }
+      ]
+    },
+    {
+      "id": "claim_5839d227cad2440888ae673537699096",
+      "statement": "Provider-profile resolution merges an exact model profile over its provider profile, chains pre-initialization hooks and dynamic factories base first, and lets factory output override static profile kwargs while caller kwargs retain final precedence.",
+      "evidence": [
+        {
+          "resource": "repo://libs/deepagents/deepagents/profiles/provider/provider_profiles.py",
+          "version": "repo-file-v1:sha256:43b55f1b02951ad37e728563ce1c12341310282dc3efc28ab6f4606dcd29a1ba"
+        }
+      ]
+    },
+    {
+      "id": "claim_e5cda20535d44f86a778a01be64adc2d",
+      "statement": "Harness-profile lookup selects an exact spec before provider fallback and merges model-level and provider-level fields; create_deep_agent resolves this profile for the main model and each declarative subagent before applying prompt, tool-description, and middleware changes.",
+      "evidence": [
+        {
+          "resource": "repo://libs/deepagents/deepagents/graph.py",
+          "version": "repo-file-v1:sha256:000accbaac450a30c02b7b1483529368947ed433dc47df7459a6c87d06de4ff3"
+        }
+      ]
+    },
+    {
+      "id": "claim_f82a12510ac843b9a6bbbaf9c6f52d47",
+      "statement": "Profile bootstrap is lazy, thread-coordinated, and one-time: built-ins load by direct imports, then third-party provider and harness entry-point hooks layer on top; broken built-ins fail bootstrap while broken third-party plugins are logged and skipped.",
+      "evidence": [
+        {
+          "resource": "repo://libs/deepagents/deepagents/profiles/_builtin_profiles.py",
+          "version": "repo-file-v1:sha256:005a91e7fc4ca6b21220673dd9d02d6686bf63e1e4f1102d124b01f96886efcf"
+        }
+      ]
+    },
+    {
+      "id": "claim_ce6d35b5ce22424784007b768910fbc2",
+      "statement": "SDK resolve_model applies ProviderProfile construction behavior only to string specifications and returns an existing BaseChatModel unchanged; focused tests cover both pass-through and profile-derived kwargs for string resolution.",
+      "evidence": [
+        {
+          "resource": "repo://libs/deepagents/deepagents/_models.py",
+          "version": "repo-file-v1:sha256:56bd80d4f6d30b166c9adcc6a0b3843796920da474a7e8b8a7ecd0adc1427c31"
+        }
+      ]
+    },
+    {
+      "id": "claim_81df4e8140eb47cc9bf1856f91681fd3",
+      "statement": "dcode creates models only after policy validation, layers provider and per-model defaults with stored credentials and SDK provider profiles before runtime kwargs, and stamps the concrete model with the provider-specific retry budget used after runtime model switching.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/config.py",
+          "version": "repo-file-v1:sha256:d0c32beb542bb08f3fef9f9009fe8214757479440618f6cb38740aa8d993c934"
+        }
+      ]
+    },
+    {
+      "id": "claim_930d630b55e84995b24caf8bc18b268e",
+      "statement": "dcode's ModelCatalog is a strict presentation snapshot that carries model specifications, provider readiness, policy metadata, and a scalar allowlist of displayable capability fields with override provenance; it does not cross constructor kwargs or arbitrary profile extensions over the process boundary.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/model_catalog.py",
+          "version": "repo-file-v1:sha256:ac01d1d8d224ad5d53855b038f34a3f945ce256735b99ed5a1595f67e50de15b"
+        }
+      ]
+    },
+    {
+      "id": "claim_c8cbf5a8671e45cd9fd1a8ff3aa7fc39",
+      "statement": "dcode discovery filters profile-derived models to enabled providers with tool calling and usable text I/O, merges explicitly configured model lists, and then applies models.allowed; recommended and current specifications are retained only when provider enablement and policy permit them.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/model_config.py",
+          "version": "repo-file-v1:sha256:4fdf62e83ed6a34ef4580e4a8502a5392d48711b2978615c7fd65184ae95a928"
+        }
+      ]
+    },
+    {
+      "id": "claim_e20807c6beb743a6bbb1d2c2680b2001",
+      "statement": "dcode reports provider readiness independently from discovered model rows, including setup hints for known custom or credential-mapped providers; a remote picker uses the supplied catalog rather than local provider data, and applies catalog policy before provider installation or authentication prompts.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/model_catalog.py",
+          "version": "repo-file-v1:sha256:ac01d1d8d224ad5d53855b038f34a3f945ce256735b99ed5a1595f67e50de15b"
+        }
+      ]
+    },
+    {
+      "id": "claim_6565640c02fe4f18b78ab42b66588c46",
+      "statement": "ConfigurableModelMiddleware can switch a model and merge per-call settings from runtime context without recompiling the graph; blocked switches propagate, while other construction errors can fall back to the current model unless strict resolution is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/configurable_model.py",
+          "version": "repo-file-v1:sha256:ba5accd2641607c4552d054fb7efcb2e77461e768820a28d75f49871142bf2cb"
+        }
+      ]
+    },
+    {
+      "id": "claim_61d98f9c2fd040f8a206ee788375012c",
+      "statement": "dcode exposes reasoning effort only from a reasoning-capable model profile, normalizes provider-native effort parameters to reasoning_effort, and restricts Anthropic between-tools mode to low, medium, and high effort levels.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/reasoning_effort.py",
+          "version": "repo-file-v1:sha256:615f51b5d3ee0e077184a2dce99426617828dcfb2386f985502a068c4e6f8add"
+        }
+      ]
+    },
+    {
+      "id": "claim_834ca636dfce490483a35b9af8d6e8b7",
+      "statement": "dcode disables recognized provider SDK retry loops, stores the selected retry budget on each constructed model, and its model-node middleware uses that per-request budget so runtime model switches do not multiply retry attempts.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/config.py",
+          "version": "repo-file-v1:sha256:d0c32beb542bb08f3fef9f9009fe8214757479440618f6cb38740aa8d993c934"
+        },
+        {
+          "resource": "repo://libs/code/deepagents_code/model_retry.py",
+          "version": "repo-file-v1:sha256:85d658fa6022ee43d8bb2441be12c789676ae31487662ba09c313c42437d0090"
+        }
+      ]
+    },
+    {
+      "id": "claim_e718a74d31174b608863c1fbc445b800",
+      "statement": "CodeModelRetryMiddleware retries only classified transient model failures at the model node, uses provider Retry-After or jittered exponential backoff within an interactive delay budget, re-raises failures instead of fabricating an AI answer, and emits attempt and retry lifecycle events for streamed-output reconciliation.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/model_retry.py",
+          "version": "repo-file-v1:sha256:85d658fa6022ee43d8bb2441be12c789676ae31487662ba09c313c42437d0090"
+        }
+      ]
+    },
+    {
+      "id": "claim_6c21a984544241498422af414bbe3400",
+      "statement": "Harness profiles can tune every SDK-assembled main, general-purpose, and declarative synchronous subagent stack through static or factory extra middleware, but cannot inject into already compiled or remote async subagents; file-friendly HarnessProfileConfig deliberately excludes this runtime-only extension.",
+      "evidence": [
+        {
+          "resource": "repo://libs/deepagents/deepagents/profiles/harness/harness_profiles.py",
+          "version": "repo-file-v1:sha256:ffe76d57768c722ca729918ddfd1c60646159b9ca9b916cb4916b3ddde194653"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e19b0c0d5144b31b9b4e2dffcea9075",
+      "statement": "Harness middleware exclusions cannot remove required filesystem or subagent scaffolding, and unmatched exclusions fail graph assembly; tool exclusions instead run after tool-injecting and custom middleware, making them the supported way to hide tools from the model.",
+      "evidence": [
+        {
+          "resource": "repo://libs/deepagents/deepagents/profiles/harness/harness_profiles.py",
+          "version": "repo-file-v1:sha256:ffe76d57768c722ca729918ddfd1c60646159b9ca9b916cb4916b3ddde194653"
+        }
+      ]
+    },
+    {
+      "id": "claim_1ca9c38b91e04ea0b33fa19e1655d984",
+      "statement": "dcode pins its SDK dependency to deepagents==0.7.34, supplies core Anthropic, Google GenAI, and OpenAI integrations, and exposes additional model integrations as optional provider extras.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/pyproject.toml",
+          "version": "repo-file-v1:sha256:0c06aa5f84a71ef73786c5aca6d3874f53bf081c6030cef8992c416e90021318"
+        }
+      ]
+    },
+    {
+      "id": "claim_c12d5d323d1d4d46aa5b176aa19d6a24",
+      "statement": "dcode capability profiles are a separate descriptive layer: get_model_profiles merges upstream integration profile data with configured and CLI overrides, tracks overridden keys, and includes configured-only, class-path, Codex, and discovered Ollama models.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/model_config.py",
+          "version": "repo-file-v1:sha256:4fdf62e83ed6a34ef4580e4a8502a5392d48711b2978615c7fd65184ae95a928"
+        }
+      ]
+    },
+    {
+      "id": "claim_17ce6255de0640cfbaa11d12c308929b",
+      "statement": "An explicitly malformed dcode models.allowed declaration becomes a deny-all policy rather than silently falling back to unrestricted model access.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/model_config.py",
+          "version": "repo-file-v1:sha256:4fdf62e83ed6a34ef4580e4a8502a5392d48711b2978615c7fd65184ae95a928"
+        }
+      ]
+    },
+    {
+      "id": "claim_43794461b2fc4d10ae04a034638c9c26",
+      "statement": "After policy admission, dcode bridges stored credentials before its explicit-provider credential check, skips that check for implicit-auth providers, and reports missing credentials as a typed actionable error.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/config.py",
+          "version": "repo-file-v1:sha256:d0c32beb542bb08f3fef9f9009fe8214757479440618f6cb38740aa8d993c934"
+        }
+      ]
+    },
+    {
+      "id": "claim_514aac6e2aee4074936b56bf8d2aa364",
+      "statement": "The effective dcode model-node retry budget is selected in descending precedence from --max-retries, provider-specific retry configuration, global retry configuration, and the built-in default; zero disables retries.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/config.py",
+          "version": "repo-file-v1:sha256:d0c32beb542bb08f3fef9f9009fe8214757479440618f6cb38740aa8d993c934"
+        }
+      ]
+    },
+    {
+      "id": "claim_2946405202e94bdb8ed6f843b6441324",
+      "statement": "dcode converts arbitrary ProviderProfile hook or factory failures into ModelConfigError so model-construction failures use the application's actionable error path.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/config.py",
+          "version": "repo-file-v1:sha256:d0c32beb542bb08f3fef9f9009fe8214757479440618f6cb38740aa8d993c934"
+        }
+      ]
+    },
+    {
+      "id": "claim_7f00ab756ebf4225ac9f05bfb43bb47e",
+      "statement": "dcode requires Python >=3.14,<3.15 and pins deepagents==0.7.34, while the deepagents 0.7.34 manifest supports Python >=3.11,<4.0; the dcode workspace's editable deepagents source is a development override rather than a released compatibility expansion.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/pyproject.toml",
+          "version": "repo-file-v1:sha256:0c06aa5f84a71ef73786c5aca6d3874f53bf081c6030cef8992c416e90021318"
+        },
+        {
+          "resource": "repo://libs/deepagents/pyproject.toml",
+          "version": "repo-file-v1:sha256:52d80e9086d5efaceaf71dddaa369cbdd775a00741dbfca815387d0c35eca0b5"
+        }
+      ]
+    },
+    {
+      "id": "claim_63d160d2e12e4e57a01d3166fef2199a",
+      "statement": "For dcode environment lookups, a present DEEPAGENTS_CODE_<NAME> variable takes precedence over the canonical name even when empty, allowing it to suppress the canonical value; stored credential bridging respects that precedence.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/model_config.py",
+          "version": "repo-file-v1:sha256:4fdf62e83ed6a34ef4580e4a8502a5392d48711b2978615c7fd65184ae95a928"
+        }
+      ]
+    },
+    {
+      "id": "claim_d0b5d5a5d59e4899bf5152f7af1f9bc7",
+      "statement": "The deepagents 0.7.34 manifest requires LangChain >=1.4.9,<2.0.0, LangChain Core >=1.7.6,<2.0.0, langchain-anthropic >=1.7.10,<2.0.0, and langchain-google-genai >=4.4.3,<5.0.0.",
+      "evidence": [
+        {
+          "resource": "repo://libs/deepagents/pyproject.toml#L22-L30",
+          "version": "repo-lines-v1:sha256:57c8afe06faf526b7ac737105172dc64eeb0452613efec86501c16449cfe5666:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWQ5NWY1ZTllZGUwMTgxNjA0M2MwNzk3YWNlOGRhMmFjNGU5OWE4YTZhNjEwZmE5ODU3MGVmMzRiOTM1NjEwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjk0MTZlMDlmNzhiYTMxNmMwMzI1NjgyMTNiODU1ZWU3NTZlNDE1NjVkOTE4ZjA5NTE5YzgxZmQ2MjBmNDA2MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDkzZWJmM2FlYTczODE3Y2ZlNDM2ZjhhNWE5YjE0ZWEwMjg2YTYyZWE0NGExZjJlOThmNTE4MGFlNTI4M2JjYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWVhMWZiYmU2NjExMTE2YWJiNDQ1MDcyYTdjOWM1MTU2MDAwNDYwZWU1OWJmMWY0ZGQyNDY5ODlkOWEwMTJiYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3dfa2be2b07b45a39ae79df0e64d4326",
+      "statement": "dcode declares core Anthropic, Google GenAI, and OpenAI integration floors and provides separately installable provider extras with explicit floors for additional model integrations.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/pyproject.toml#L110-L138",
+          "version": "repo-lines-v1:sha256:2dedeb8c417f7a9c8de19a9f99307000be8f76f785e45c865c93044dde854175:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5MjE4ZGM0Y2U5NzFjYmUzZDM4ZDc3NDMwZTYzOTkxODg4NGRkNzdkNzE4NGM3YjkzZGZkYzJlOTk4NjkxYjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NDE2ZTA5Zjc4YmEzMTZjMDMyNTY4MjEzYjg1NWVlNzU2ZTQxNTY1ZDkxOGYwOTUxOWM4MWZkNjIwZjQwNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViOGRmYTk5ZDY2MDA2MDFhMGZiODVhNWI0YjUyYzI1NmNjMTIxNTE2NTQ1MWEyZDlhNWUyYWEwNGIyZGU3MjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk2OWU2MmIwOTAwZjZmZDk3ZGNhMGFiZGQ2ZWRlNmY1OGY5MDY5Y2VjNjQ3YmMzNDg5ZDE0MjA2ZDM0ZjEyMTYifQ"
+        },
+        {
+          "resource": "repo://libs/code/pyproject.toml#L41-L46",
+          "version": "repo-lines-v1:sha256:f4acc7c666e92cb1579b786f50c7d4c0cb2bd1299a94db483160cb38784117b4:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmJkNDM3YzAwMTc0MWRiMGMzYjVmNTQ5NjU4MjRkNjcxM2IzMjM3MzgwMzdlYWNmNTI2ZjU5ZGRkNTYwMjk3NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTMxMWNkZmQzNzBjZTVjMDZhNmZmNDBhODNjNTNlMDBmZTUxNmIyOTM0MWU1Yzg5YmU2M2Y5ZTAwNTQ4MjAxZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDJkYmY1NDgxOTEwM2NkYTZiYzRlOTc2OWMwNTM0Y2FiYjU2NTJhM2ExMTJjODQ3ZmFlNWZlM2UxYTJjM2IwNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2Q0MGExZTQ4MDU5MDUzNzVhNzliODQxNzM0MDExZmQ1OTFiNGY3YzUyYjE5OTk0NTAwNmI3NzBmZTU1MDE4OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4bf458d581842e3afac2f2bc961bf56",
+      "statement": "dcode 0.2.5 records a fix that sizes compaction input budget to the selected model.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/CHANGELOG.md#L5-L11",
+          "version": "repo-lines-v1:sha256:f590e8b1b7a5be7c8e215dfd93e8610928a562bfcc30dbad24780fa26e3dac07:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODBkN2MyYzgyOWI2NjEzYjNiNzgwMjY1NzY4YTkyZGUxZDE2YmE4MTczNDM3ZjdiYWI2OTQ3NjE0ZmI1ZDBkZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDM4MWQ4NTVhY2YwMjQ2YzA1ZjdjNjM4NTUxYmIwMDJlYTIxNzc0OWJiNDllMzY0M2FmYzY0Y2IxNDE0ZTgwNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTYxMTAxNzM2NDViYTFkNmQ3OTdhMWFhNTI0ZjZlN2Y2YTM2MGIzYmZkNTNmZGI5ODA4MmExOGRiM2ZlOGU3NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmQ4NWRlMmE4ODZkOTU4Mzk1NzhkMzhhOWNmYWQ2MWM1MDkwMzhmNmRkYjFmYzk3NTMzMDFmYTY4YjQ1NDk2ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9660c36f01ba4b2abfe37cc73b312bc8",
+      "statement": "The built-in NVIDIA Nemotron 3 Ultra harness profile is registered under eight exact NVIDIA and reseller model specifications rather than provider-wide, and applies filesystem-call repair, a 500-line default for read_file, empty-result and full-page continuation normalization, and bounded 429 model-call retries only to those matches.",
+      "evidence": [
+        {
+          "resource": "repo://libs/deepagents/deepagents/profiles/harness/_nvidia_nemotron_3_ultra.py#L149-L281",
+          "version": "repo-lines-v1:sha256:35145c7a833445ce2fb366dae6c1de03cd6ec4067b3487a46b04316013c6b3f3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI3ODdiZDI0MzYzYzkyNzMxNGUwYjM2NGIwNGU5NWY4ZTdkZjc3ZGZjOTNjZGQ2ZTdiMGI1OWIwNWM4OGFjOGMyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI2ZGJiZTNlNDFhNmE3MDliZjE2OGFmMzcyMTE4NDFiMjJhMTI1YzRkNjY3MzAwZjRjZjc4MjlmY2FhODE0OWJjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIzOGFlNjBhMDlhNzg0YjQ3ZWEwODUzMTZiZmY5MmM2ODAxMWRkNjcwZDg5ZjI4ZGFmNWRhOWJiNmFlNDFiYzQyIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIzNzk5ZmViN2RlMDdiNjdmNTI1NTZjZWU3MTVlODE0YWRkOWJmOWFmYzdjMDk5YTg0ZDA1NGYzNGJhMTVlYTk1In0"
+        },
+        {
+          "resource": "repo://libs/deepagents/deepagents/profiles/harness/_nvidia_nemotron_3_ultra.py#L1824-L1857",
+          "version": "repo-lines-v1:sha256:d9b9e5b3eb200c406b3f6cf66044fb498829c3d5f9b1d5b2e4e10103761c657d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkMWJhYzQ3MDUxNGQ5OGFlMmY3YTdkNzNmMDU4YmFmMzdkZjU0NTBjMWI0OTkwY2ExMWFiNWNkZTUxNTdhN2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4MDNhYjVlNDc2NmIwMzA0OGM4ZmE4ZjViN2ZjMjVhNWRjMGExOTJlYmFiOWUwYmY1ZGU1NzlkYjIzYTBiZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUxMjE3MjBlNDM3OWIwZTk1MDgxY2E3NDVhYTE5OGQyY2Q3OGVjNTk4YzlmM2VlYjc3MTkyYmQzZGQ2MWYzMGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://libs/deepagents/deepagents/profiles/harness/_nvidia_nemotron_3_ultra.py#L42-L67",
+          "version": "repo-lines-v1:sha256:75871191f99c0294e4ec80bede5d85915566bce372a3dfbd9c23c3ac11191594:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyNjEwZDZlZjE5NDE0ODk2ODQ2ODBkOTJmYjhiNGY4ZmRmYTU2NzkwY2JjZWU5NmJkOTcxMDYzMjE1NjM0MGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwNDlmNTRkNDBkZTk4N2I5NjliZWVkZDU4NDkwZDEzOTYxMWY3MTE3MTc0NDQxODdlNGQ2M2Q1ZTBjMzFhMmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhMzRlNTI5MWIwZmQwMzQwM2Y3MDJhZTNmOWJjYTkzN2JiZDBlNDg4NjBjMjMzOGM0NWMxY2E2MmNlMTQzOTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFmZDFlOGZlYzUwZTViYjY3ODM3NWQ0OTA0NDNkYWU5MDJjZjYyNmFkY2RmYTU1MzA4MjFjNmY4OTAyMTBlNzIifQ"
+        },
+        {
+          "resource": "repo://libs/deepagents/deepagents/profiles/harness/_nvidia_nemotron_3_ultra.py#L85-L131",
+          "version": "repo-lines-v1:sha256:e48f2e022c425d263018e304046adf92f7cd635483e3eec4e2d24830bf98ca1d:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlN2ZkNjM0ODcxMDE2YWZhNjk1ZTFkNjNjZWI5NWJhNjM2MjU3ZjcyNzg2ZmJiMGM0MDNiYzY0NTRjNzJmZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwMzcyZmFiYTg2MWMyMGVmZGUyOTJlNjBjNzRkMjNmYTEyMGQzNzIzNjNiMzgyNmI1YTFjNzE0MjgwZjJiNTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUwYjIxYmY4OTVmYWUyZDczOTIwZDkzMTc4Y2ZkNTg0MWNkZjhmOTUyNDUxNmM4YTU2NTg0MzZhNGFjNDhmM2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0ODRhZjQxZmE4YmE4MzA2NzEyNTgyOGM3N2NkMzNhYWRhOTQ2MTFhZGQxNjM0MzZjODQ1ZGVhMThiYWJmMWQifQ"
+        },
+        {
+          "resource": "repo://libs/deepagents/tests/unit_tests/test_nemotron_ultra_profile.py#L40-L351",
+          "version": "repo-lines-v1:sha256:0fcb3515e054ff819fab0c9d3243d8898e7710cd88a8d482e09f9d773faf358b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJiNWZmZDViNGViYTA3MzRjYTgwNDdiYWQ1ZjZmNTBkYzg1NjA1YWRjNDc3MTRkY2JjY2UwMThhYTAyODk3YjUyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIyMjg0ZDQ1NjYxMWJhNjk4MGQ3YjRmYjNlMjk5OTFkNjAwZmE0YWU4Nzg1ZWZmMTgxMWU4MjAxNWZjMjI1YjZhIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIwNTUwOTk4NjgwMmRjNzg0NTgzZDczNWY5MDBmOTA1MzQzZGJhZjk2ZDEzYzIyMzBjNTYyY2E0MTZkYTFlMjE3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI5ZDc3ZWM4OTM4NzQ5NjUyZjM4ZGE2OWUyYjdlZGNmYmRhODU5MDFlMmJmNmZkYTU2NjlkODk4YjE4Yjg3N2ZlIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4dadb1d2349425cb029635bc34b78fa",
+      "statement": "A dcode provider class_path is a trusted configuration boundary because construction imports and instantiates the configured BaseChatModel class rather than using normal init_chat_model resolution.",
+      "evidence": [
+        {
+          "resource": "repo://libs/code/deepagents_code/config.py#L6945-L6948",
+          "version": "repo-lines-v1:sha256:19a94cd020e0f26ece77e896af0dc7b56cbbd0daec21a5a952e38e6e67fac619:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWI2ZWUyZDlmMjcwODdiYTdiZDg2NWM5NmFjZDdjN2FiYTM3MGU3Y2VmN2MzN2I1ZWJmZTYxNDVlZTEzOGY1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2ZjODIwZmU3MjZkOTVlMjkxN2IxNzViNTNlN2VjOGM3ZGJiM2VhYjBlZjRlODdkMWNlN2IwMGQ3MzVmNDgwMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWE2MzAzNDFiZjBlOTFkNGE0NGIzM2VjZGI1MmUwZDY5NWM4NWI4YTgyZjkwOWVmMzAxODdiNTQ5ZDBkNGFmMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDIwOGI5MzRjZDE3YTQzNjNhMzI4MjU5OGIzOTMzYjJlODcyYTAzZDBhYzRiMzUwMWRhNGUyNjgyYTYxNDMwYyJ9"
+        },
+        {
+          "resource": "repo://libs/code/deepagents_code/config.py#L7209-L7210",
+          "version": "repo-lines-v1:sha256:48a937654632762ab70e90e03fd875efa9cb755d739cafcfa664396cc94644f4:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGE5NjQzM2IxNjYwZDMxOWY2ODk1YTg1ZmUzODBlNzk1ZjA2ZjMyZjkxYjk1YjU5YjFkNzYxMTMxOTQ5ZGUxNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWVkNDMwMTgyYzg4ZWNlODIyYzFiMjA1Y2I1ZjU0OWIyZWVlMzQ3MmRkYzE5OTBlYzg1OGY3ZGY3NTBjYWQzMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjM0ZjMwMDRhNzE1ZGIxN2Y5NzI0MjNhM2M5NDZjZDU1ZjdlMWIyZTVjNDRhZTIyODgyYTAzZDM3N2Q0NmVmMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTY5ZGYwN2E3MWE5YjAwMDIyNWVhMTVjNGZiNWJhMGNjZjhiZWI2OWU1NzcxMDAyNTVmYjg5YjgyNWEwYTllMyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.4.2",
+    "at": "2026-11-07T08:03:46.171Z"
+  }
+}
