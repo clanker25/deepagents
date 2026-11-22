@@ -1,0 +1,7 @@
+# Files
+
+- [CI Gates and Labels](ci-labeling.md) - Operate merge-facing CI, PR metadata checks, release dependency safeguards, and manual Harbor evaluation workflows. Covers acknowledgement labels, trusted boundaries, failure behavior, release publication controls, and focused tests.
+- [dcode Costs, Traces, and Session Operations](cost-and-sessions.md) - How dcode persists best-effort model-cost estimates and transports JavaScript subagent receipts into the owning thread checkpoint. Covers receipt ownership, cancellation and resume safety, and focused regression tests.
+- [dcode Installation and Update Lifecycle](dcode-install-and-update.md) - How dcode checks, announces, and applies self-updates, including install-method safeguards, metadata caching, locking, Python migrations, and optional dependency changes. Covers safe deferral, recovery, and editable-install behavior for updates, extras, and arbitrary packages.
+- [Development and Release Operations](development.md) - Package-local uv development, lockfile closure, release baselines, and source-free wheel validation for independently versioned Python packages. Explains why an editable workspace is not evidence that the published dependency graph resolves.
+- [Security and Trust Boundaries](security.md) - Operational guidance for host-shell authority and cleanup, filesystem policy, dcode trust, MCP/OAuth safety, and Talon hooks, subagents, channel admission, and unattended work.
